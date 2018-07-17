@@ -125,3 +125,12 @@ def capnhatthongtin(request, isPass = False):
         except Exception as e:
             data = {'update':'NG'}
     return JsonResponse(data)
+
+
+def thanhvienDangxuat(request):
+    if request.method == 'POST':
+        logout(request)
+        data = {'logout' : 'OK'}
+        return JsonResponse(data)
+    return pageReturn(request, THANH_VIEN)
+    
