@@ -25,7 +25,7 @@ function dangnhap(){
     $('#usrError').hide();
     $('#pwdError').hide();
     $.ajax({
-      url : '/ajax/nhanvien/dangnhap',
+      url : '/ajax/thanhvien/dangnhap',
       type : 'POST',
       data : {
         'usr':$('#usr').val(),
