@@ -12,6 +12,8 @@ urlpatterns = [
     #viewsThanhvien
     path('thanhvien/dangky', thanhvien.dangky, name='dangky'),
     path('thanhvien/dangnhap', thanhvien.dangnhap, name='dangnhap'),
+    path('thanhvien/thongtincanhan', thanhvien.thongtincanhan, name='thongtincanhan'),
+    path('thanhvien/dangxuat', thanhvien.dangxuat, name='dangxuat')
     #views
 	path('phutung', views.phutung, name='phutung'),
 	path('laixeantoan', views.laixeantoan, name='laixeantoan'),
