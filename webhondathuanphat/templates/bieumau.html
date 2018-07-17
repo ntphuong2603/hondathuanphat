@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	{% load static %}
+  	<link rel="shortcut icon" type="image/png" href="{% static "img/Honda_logo_2.png" %}">
+  	<link rel="stylesheet" href="{% static "css/css-hondathuanphat.css" %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+  	<title>Honda Thuận Phát</title>
+
+  	<!-- Bootstrap core -->
+  	<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+  	<script src="{% static "js/jquery.min.js" %}"></script>
+  	<script src="{% static "js/popper.min.js" %}"></script>
+  	<script src="{% static "js/bootstrap.min.js" %}"></script>
+  </head>
+  <body>
+    <div class="container">
+  		<!-- Company introduction -->
+  		<span class="myHeader">
+  			<p class="text-xl-left py-2">
+  				<strong><h1> Honda Thuận Phát - Nha Trang</h1></strong>
+  			</p>
+  		</span>
+  		<!-- Navigation bar menu -->
+  		<nav class="navbar navbar-expand-md sticky-top">
+  			<a class="nav-link" href="{% url 'trangchu' %}">
+  				<img src="{% static "img/Honda_logo_0.png" %}" style="height: 25px;">
+  			</a>
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+  				<span class="navbar-toggler-icon"></span>
+  			</button>
+  			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+  				<ul class="navbar-nav mr-auto">
+  					{% for key, dict in leftMenu.items %}
+  						{% if dict.subMenu == None %}
+  						<li class="nav-item">
+  							<a class="nav-link {% if key == webParam.selectedMenu %} active {% endif %}" href="{% url key %}">{{ dict.menuName }}</a>
+  						</li>
+  						{% else %}
+  						<li class="nav-item dropdown">
+  							<a class="nav-link dropdown-toggle {% if key == webParam.selectedMenu %} active {% endif %}" href="#" id="navbarDropdown_{{key}}">{{ dict.menuName }}</a>
+  							<div class="dropdown-menu" aria-labelledby="navbarDropdown_{{key}}">
+  								{% for each, value in dict.subMenu.items %}
+    								{% if each in webParam.loaiXe %}
+    								<a class="dropdown-item" href="{% url 'theoLoaiXe' loaiXe=each %}">{{value}}</a>
+    								{% else %}
+    								<a class="dropdown-item" href="{% url each %}">{{value}}</a>
+    								{% endif %}
+  								{% endfor %}
+  							</div>
+  						</li>
+  						{% endif %}
+  					{% endfor %}
+  				</ul>
+  				<ul class="navbar-nav">
+  					{% for key, dict in rightMenu.items %}
+  					<li class="nav-item px-1">
+  						<a class="nav-link {% if key == webParam.selectedMenu %} active {% endif %}" href="{% url key %}">{{ dict.menuName }}</a>
+  					</li>
+  					{% endfor %}
+  				</ul>
+  			</div>
+  		</nav>
+      {% if webParam.jsFile != None %}
+      <script src="{% static webParam.jsFile %}"></script>
+      {% endif %}
+      {% csrf_token %}
+  		{% block content %}
+  		{% endblock %}
+
+  		<!-- Footer -->
+  		<div class="footer-copyright text-right p-1">
+    			Bản quyền thuộc công ty TNHH MTV Thương Mại <b>Thuận Phát</b> Nha Trang - GPKD: 1234567890
+  		</div>
+  	</div>
+  </body>
+</html>

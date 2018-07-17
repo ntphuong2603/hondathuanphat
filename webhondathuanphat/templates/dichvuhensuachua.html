@@ -1,0 +1,128 @@
+{% extends "bieumau.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6 py-3">
+    <form>
+      {% csrf_token %}
+      <div class="form-group row">
+          <label for="customerName" class="col-sm-3">Tên thường gọi</label>
+          <div class="col-sm-9">
+            <input id="customerName" class="form-control" placeholder="Nhập tên thường gọi của quý khách">
+            <small class="text-muted"><span class="text-danger" id="errorcustomerName" style="display: none">
+              Tên của quý khách chưa được nhập
+            </span></small>
+          </div>
+      </div>
+      <div class="form-group row">
+          <label for="phoneNumber" class="col-sm-3">Số điện thoại</label>
+          <div class="col-sm-9">
+            <input id="phoneNumber" class="form-control" placeholder="Nhập số điện thoại để nhân viên liên hệ">
+            <small class="text-muted"><span class="text-danger" id="errorphoneNumber" style="display: none">
+              Số điện thoại nhập không phù hợp hoặc không đúng
+            </span></small>
+          </div>
+      </div>
+      <div class="form-group row">
+        <label for="modelName" class="col-sm-3">Loại xe</label>
+        <div class="col-sm-9">
+          <input id="modelName" class="form-control" placeholder="Nhập loại xe cần sữa chửa như: Air Blade, Winner, ...">
+          <small class="text-muted"><span class="text-danger" id="errormodelName" style="display: none">
+            Loại xe cần sửa chữa chưa được nhập
+          </span></small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="ngayHen" class="col-sm-3">Lịch hẹn</label>
+        <div class="col-sm-9">
+          <div class="form-group row">
+            <div class="col-md-6 col-sm">
+              <select class="form-control" id="ngayHen" onchange="getGioHen();">
+                <option disabled selected value="">Chọn ngày</option>
+                {% for eachDate in webParam.webData %}
+                <option value="{{eachDate}}" >{{ eachDate }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-md-6 col-sm">
+              <select class="form-control" id="gioHen">
+                <option disabled selected value="">Chọn giờ</option>
+              </select>
+            </div>
+          </div>
+          <small class="text-muted"><span class="text-danger" id="errorDateTime" style="display: none">
+            Ngày hẹn và giờ hẹn chưa được chọn
+          </span></small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="mechName" class="col-sm-3">Kỹ thuật viên</label>
+        <div class="col-sm-9">
+          <input id="mechName" class="form-control" placeholder="Tên kỹ thuật viên mong muốn">
+          <small class="text-muted"><span class="text-primary" style="display: block">
+            Tên kỹ thuật viên có thể nhập hoặc không
+          </span></small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="symptomDescription" class="col-sm-3">Hiện tượng</label>
+        <div class="col-sm-9">
+          <textarea id="symptomDescription" class="form-control" row="7" placeholder="Mô tả hiện tượng hư hỏng của xe để kỹ thuật viên có hướng khắc phục trước"></textarea>
+          <small class="text-muted"><span class="text-primary" style="display: block">
+            Hiện tượng mô tả càng chi tiết càng tốt sẽ giúp rút ngắn thời gian sửa chữa tại cửa hàng.
+          </span></small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="partList" class="col-sm-3">Danh sách phụ tùng</label>
+        <div class="col-sm-9">
+          <textarea id="partList" class="form-control" row="3" placeholder="Nhập vào tên của những phụ tùng dự định sẽ thay thế để nhân viên có thể chuẩn bị trước"></textarea>
+          <small class="text-muted"><span class="text-primary" style="display: block">
+            Danh sách phụ tùng càng rõ ràng thì việc báo giá càng chính xác
+          </span></small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <button type="button" class="btn btn-primary btn-block btn-lg py-2" onclick="goiLichHen();">Hẹn lịch</button>
+      </div>
+    </form>
+    <!-- Xác nhận cuộc hẹn sửa chữa -->
+    <div class="modal" tabindex="-1" role="dialog" id="xacnhanLichhen">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Xác nhận lịch hẹn</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="xacnhNoidung">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="dangkyLichHen();">Gởi lịch hẹn</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Làm lại</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -->
+    <div class="modal" tabindex="-1" role="dialog" id="errorHenLich">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Kết quả đăng ký</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="noidungKetqua">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng thông báo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

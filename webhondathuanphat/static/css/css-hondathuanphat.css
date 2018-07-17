@@ -1,0 +1,50 @@
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler{
+  border-color: #fff!important;
+}
+
+.myHeader {
+  background-color: white;
+  color: #ff3547!important;
+}
+
+.footer-copyright, .navbar , .navbar .nav-item .dropdown-menu{
+  background-color: #ff3547!important;
+  color: white;
+}
+
+.navbar .dropdown-menu {
+  background-color: #fff;
+  color: #ff3547!important;
+}
+
+.navbar .nav-item a:hover, .navbar .nav-item .active, .dropdown-menu .nav-link{
+    color: #ff3547!important;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 2rem;
+}
+
+li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.navbar .nav-item .nav-link, .navbar .nav-item .dropdown-item {
+  color: #fff;
+}
+
+.notFinish {
+  text-align: center;
+  padding-top: 150px;
+  height: 450px;
+  font-size: 35px;
+  color: blue;
+}
+
+.contentHeight {
+  height: 430px;
+}

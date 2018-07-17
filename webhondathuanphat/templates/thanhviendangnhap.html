@@ -1,0 +1,47 @@
+{% extends "bieumau.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4 pt-5 pb-5">
+    <div class="py-3 text-center">
+      <h2 style="color: blue; font-weight: bold; padding-bottom: 15px;">Thông tin đăng nhập</h2>
+    </div>
+    <from id="signin_data">
+      <div class="form-group">
+        <label for="user">Tên đăng nhập</label>
+        <input type="user" class="form-control" id="usr">
+        <small class="text-muted py-3"><span class="text-danger" style="display: none" id="usrError">
+          Tên đăng nhập không được để trống
+        </span></small>
+      </div>
+      <div class="form-group">
+        <label for="pass">Mật khẩu đăng nhập</label>
+        <input type="password" class="form-control" id="pwd">
+        <small class="text-muted py-3"><span class="text-danger" style="display: none" id="pwdError">
+          Mật khẩu không được để trống
+        </span></small>
+      </div>
+      <button type="button" class="btn btn-primary btn-block btn-mx btn-lg" id="btnDangnhap" onclick="dangnhap();">Đăng nhập</button>
+    </from>
+    <!-- Kết quả thành viên đăng nhập -->
+    <div class="modal" tabindex="-1" role="dialog" id="ketquaDangnhap">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Kết quả</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id='noidungKetquaDangnhap'>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnVetrangCanhan" style="display:none" onclick="veTrangcanhan();">Về trang cá nhân</button>
+            <button type="button" class="btn btn-secondary" id="btnDangnhaplai" data-dismiss="modal">Đăng nhập lại</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

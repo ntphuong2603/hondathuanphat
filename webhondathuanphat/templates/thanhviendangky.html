@@ -1,0 +1,83 @@
+{% extends "bieumau.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 pt-2 pb-5">
+    <div class="py-3 text-center">
+      <h2 style="color: blue; font-weight: bold; padding-bottom: 15px;">Thông tin đăng ký</h2>
+    </div>
+    <from id="signup_data">        
+        <div class="form-group">
+          <label for="usr">Tên đăng nhập</label>
+          <input type="text" class="form-control" id="usr" aria-describedby="usrHelpBlock" value="ntphuong2603">
+          <small class="text-muted"><span class="text-primary" id="usrHelpBlock">
+            Kiểm tra tên đăng nhập trước khi đăng ký.
+          </span></small>
+          <br/>
+          <input id="ketquaKiemtraTendangnhap" type="text" value="userNG" hidden>
+          <small class="text-muted"><span class="text-danger" id="usrInfo" style="display: block">
+          </span></small>
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-danger btn-block" id='btnKiemtra' onclick="kiemtraTendangnhap();">Kiểm tra tên đăng nhập</button>
+        </div>
+        <div class="form-group">
+          <label for="user">Xác nhận thành viên bằng</label>
+          <select id="mth_confirm" class="form-control" onchange="changeConfirmInput();">
+            <option selected value="phone">Tin nhắn điện thoại</option>
+            <option value="email">Thư điện tử (email)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" pattern="^[0-9]{5,}$" class="form-control" id="phone_confirm" placeholder="Chỉ nhập số điện thoại">
+          <small class="text-muted"><span class="text-danger" id="phoneError" style="display: none">
+            Số điện thoại nhập không phù hợp hoặc không đúng
+          </span></small>
+          <input type="email" style="display: none" class="form-control" id="email_confirm" placeholder="Nhập đúng địa chỉ email">
+          <small class="text-muted"><span class="text-danger" id="emailError" style="display: none">
+            Địa chỉ email nhập không phù hợp hoặc không đúng
+          </span></small>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Mật khẩu</label>
+          <input type="password" class="form-control" id="pwd">
+          <small id="pwdHelpBlock" class="text-muted"><span class="text-primary">
+            Mật khẩu có độ dài tối thiểu 6 ký tự
+          </span></small>
+          <br/>
+          <small class="text-muted"><span class="text-danger" style="display: none" id="pwdError">
+            Mật khẩu không đạt yêu cầu độ dài tối thiểu
+          </span></small>
+        </div>
+        <div class="form-group">
+          <label for="confirm_pwd">Xác nhận mật khẩu</label>
+          <input type="password" class="form-control" id="confirm_pwd">
+          <div class="help-block with-errors"></div>
+          <small class="text-muted"><span class="text-danger" style="display: none" id="confirm_pwdError">
+            Xác nhận mật khẩu không đúng
+          </span></small>
+        </div>
+        <button type="button" class="btn btn-primary btn-block btn-lg" id="btnSubmitDangky" onclick="dangkyThanhvien();">Gởi đăng ký</button>
+    </from>
+    <!-- Kết quả đăng ký thành viên -->
+    <div class="modal" tabindex="-1" role="dialog" id="ketquaDangkyThanhvien">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Kết quả đăng ký</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="noidungKetqua">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" style="display: none" id="btnVedangNhap" onclick="vedangnhap();">Đăng nhập</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đăng ký lại</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
