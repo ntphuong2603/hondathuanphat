@@ -96,6 +96,12 @@ def capnhatmatkhau(request):
     return capnhatthongtin(request=request, isPass=True)
 
 
+@login_required(login_url='dangnhap')
+def thongtincanhan(request):
+    webParam['webData'] = Member().getMember(request.user.id)
+    return pageReturn(request, THANH_VIEN)
+
+
 def capnhatthongtin(request, isPass = False):
     if request.method == 'POST':
         phone = request.POST.get('phone')
