@@ -64,6 +64,28 @@ def kiemtraTendangnhap(request):
             return JsonResponse(data)
 
 
+def kiemtraTendangnhap(request):
+    #print(request)
+    if request.method == "POST":
+        usr = request.POST.get('usr')
+        data = {'user' : 'OK'}
+        try:
+            user = User.objects.get(username=usr)
+        except User.DoesNotExist:
+            data['user'] = 'NG'
+        finally:
+            #print(data)
+            return JsonResponse(data)
+
+
+def thanhvienDangxuat(request):
+    if request.method == 'POST':
+        logout(request)
+        data = {'logout' : 'OK'}
+        return JsonResponse(data)
+    return pageReturn(request, THANH_VIEN)
+
+
 @login_required(login_url='dangnhap')
 def capnhatthongtincanhan(request):
     return capnhatthongtin(request=request)

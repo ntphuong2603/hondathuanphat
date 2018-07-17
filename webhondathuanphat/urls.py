@@ -17,4 +17,14 @@ urlpatterns = [
 	path('laixeantoan', views.laixeantoan, name='laixeantoan'),
 	path('tintuc', views.tintuc, name='tintuc'),
 	path('tuyendung', views.tuyendung, name='tuyendung'),
+    #ajax functions for thanhvien
+	url(r'^ajax/thanhvien/kiemtraTendangnhap$', thanhvien.kiemtraTendangnhap),
+	url(r'^ajax/thanhvien/thanhvienDangxuat$', thanhvien.thanhvienDangxuat),
+	url(r'^ajax/thanhvien/capnhatthongtincanhan$', thanhvien.capnhatthongtincanhan),
+	url(r'^ajax/thanhvien/capnhatmatkhau$', thanhvien.capnhatmatkhau),
+    #ajax functions for dichvu
+    url(r'^ajax/dichvu/dangkyLichhen$', dichvu.henlichsuachua),
+    #ajax functions for nhanvien
+    #url(r'^ajax/nhanvien/dangnhap$', nhanvien.nhanvienDangnhap),
+    #url(r'^ajax/nhanvien/changeBookingStatus$', nhanvien.thanhdoiTrangthaiBooking),
 ]
