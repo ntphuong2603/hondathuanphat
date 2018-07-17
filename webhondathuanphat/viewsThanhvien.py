@@ -127,10 +127,9 @@ def capnhatthongtin(request, isPass = False):
     return JsonResponse(data)
 
 
-def thanhvienDangxuat(request):
+def dangxuat(request):
     if request.method == 'POST':
         logout(request)
         data = {'logout' : 'OK'}
         return JsonResponse(data)
     return pageReturn(request, THANH_VIEN)
-    
