@@ -1,10 +1,15 @@
 from django.urls import path
 from django.conf.urls import url
-from . import views, viewsBanhang as banhang, viewsDichvu as dichvu, viewsThanhvien as thanhvien
+from . import views, viewsBanhang as banhang, viewsDichvu as dichvu, viewsThanhvien as thanhvien, viewsNhanvien as nhanvien
 
 
 urlpatterns = [
+    #views
     path('', views.trangchu, name='trangchu'),
+	path('phutung', views.phutung, name='phutung'),
+	path('laixeantoan', views.laixeantoan, name='laixeantoan'),
+	path('tintuc', views.tintuc, name='tintuc'),
+	path('tuyendung', views.tuyendung, name='tuyendung'),
     #viewsBanhang
     path('banhang/theoLoaiXe/<int:loaiXe>', banhang.theoLoaiXe, name='theoLoaiXe'),
     #viewsDichvu
@@ -13,12 +18,9 @@ urlpatterns = [
     path('thanhvien/dangky', thanhvien.dangky, name='dangky'),
     path('thanhvien/dangnhap', thanhvien.dangnhap, name='dangnhap'),
     path('thanhvien/thongtincanhan', thanhvien.thongtincanhan, name='thongtincanhan'),
+    path('thanhvien/thongtinxe', thanhvien.thongtinxe, name='thongtinxe'),
     path('thanhvien/dangxuat', thanhvien.dangxuat, name='dangxuat'),
-    #views
-	path('phutung', views.phutung, name='phutung'),
-	path('laixeantoan', views.laixeantoan, name='laixeantoan'),
-	path('tintuc', views.tintuc, name='tintuc'),
-	path('tuyendung', views.tuyendung, name='tuyendung'),
+    #viewsNhanvien
     #ajax functions for thanhvien
     url(r'^ajax/thanhvien/dangnhap$', thanhvien.dangnhap),
 	url(r'^ajax/thanhvien/kiemtraTendangnhap$', thanhvien.kiemtraTendangnhap),
@@ -28,6 +30,6 @@ urlpatterns = [
     #ajax functions for dichvu
     url(r'^ajax/dichvu/dangkyLichhen$', dichvu.henlichsuachua),
     #ajax functions for nhanvien
-    #url(r'^ajax/nhanvien/dangnhap$', nhanvien.nhanvienDangnhap),
+    url(r'^ajax/nhanvien/dangnhap$', nhanvien.dangnhap),
     #url(r'^ajax/nhanvien/changeBookingStatus$', nhanvien.thanhdoiTrangthaiBooking),
 ]

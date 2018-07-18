@@ -58,7 +58,6 @@ def getMenuList(isLeftMenu):
 
 def getMenu():
     createSubMenu_BANHANG()
-    #print(menuList)
     return {LEFT : getMenuList(LEFT),
             RIGHT : getMenuList(RIGHT),
             WEB_PARAM: webParam,

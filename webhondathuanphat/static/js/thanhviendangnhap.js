@@ -3,7 +3,11 @@ function setToken(xhr, settings){
 }
 
 function veTrangcanhan() {
-  window.location.assign('/thanhvien/thongtincanhan');
+  var pageString = '/thanhvien/thongtincanhan';
+  if ($('#nhanvienCheck').val() == 'True'){
+    pageString = pageString.replace('thanh', 'nhan')
+  }
+  window.location.assign(pageString);
 }
 
 function showKetquaDangnhap(ketqua){
@@ -18,14 +22,28 @@ function showKetquaDangnhap(ketqua){
   $('#ketquaDangnhap').modal('show');
 }
 
+function changeLoginState(checkbox_ID){
+  var checkbox = '#' + checkbox_ID;
+  //console.log($(checkbox).val());
+  if ($(checkbox).val() == 'True'){
+    $(checkbox).val('False');
+  } else {
+    $(checkbox).val('True');
+  }
+  //console.log($(checkbox).val());
+}
 
 function dangnhap(){
   //console.log("Member signIN function !!! - U: " + $('#usr').val() + " - P: " + $('#pwd').val())
   if ($('#usr').val().length > 0 && $('#pwd').val().length > 0){
     $('#usrError').hide();
     $('#pwdError').hide();
+    var urlString = '/ajax/thanhvien/dangnhap';
+    if ($('#nhanvienCheck').val() == 'True'){
+      urlString = urlString.replace('thanh', 'nhan');
+    }
     $.ajax({
-      url : '/ajax/thanhvien/dangnhap',
+      url : urlString,
       type : 'POST',
       data : {
         'usr':$('#usr').val(),
@@ -57,5 +75,4 @@ function dangnhap(){
        }
     }
   }
-
 }

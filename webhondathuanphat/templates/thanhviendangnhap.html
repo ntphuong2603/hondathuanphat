@@ -21,6 +21,11 @@
           Mật khẩu không được để trống
         </span></small>
       </div>
+      <div class="form-check">
+        <label class="form-option-label py-2 pull-right">
+          <input class="form-check-input" type="checkbox" id="nhanvienCheck" value="False" onclick="changeLoginState(this.id);"> Nhân viên đăng nhập
+        </label>
+      </div>
       <button type="button" class="btn btn-primary btn-block btn-mx btn-lg" id="btnDangnhap" onclick="dangnhap();">Đăng nhập</button>
     </from>
     <!-- Kết quả thành viên đăng nhập -->

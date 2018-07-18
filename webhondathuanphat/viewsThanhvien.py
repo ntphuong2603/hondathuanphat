@@ -87,6 +87,11 @@ def thanhvienDangxuat(request):
 
 
 @login_required(login_url='dangnhap')
+def thongtinxe(request):
+    return pageReturn(request, THANH_VIEN)
+
+
+@login_required(login_url='dangnhap')
 def capnhatthongtincanhan(request):
     return capnhatthongtin(request=request)
 
@@ -103,20 +108,17 @@ def thongtincanhan(request):
 
 
 def capnhatthongtin(request, isPass = False):
-    if request.method == 'POST':
-        phone = request.POST.get('phone')
-        address = request.POST.get('address')
-        commentName = request.POST.get('commentName')
-        avatar = ''
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
-        email = request.POST.get('email')
+    if request.method == 'POST':        
         try:
             usr = User.objects.get(username=request.user)
-            mem = Member.objects.get(user_id=usr.id)
-            mem.update()
-            usr.update()
+            usr.first_name = request.POST.get('first_name')
+            usr.last_name = request.POST.get('last_name')
+            usr.emai = request.POST.get('email')
             usr.save()
+            mem = Member.objects.get(user_id=usr.id)
+            mem.phone = request.POST.get('phone')
+            mem.address = request.POST.get('address')
+            mem.commentName = request.POST.get('commentName')
             mem.save()
             if isPass:
                 pwd = request.POST.get('password')

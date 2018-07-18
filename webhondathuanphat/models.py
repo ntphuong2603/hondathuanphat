@@ -23,25 +23,12 @@ class RepairBooking(models.Model):
         db_table = "RepairBooking"
 
 
-MEMBER = {
-    'phone' : ['Số điện thoại'],
-    'address': ['Địa chỉ'],
-    'commentName': ['Tên thường gọi'],
-    'avatar' : ['Ảnh đại diện'],
-    'first_name': ['Tên'],
-    'last_name' : ['Họ'],
-    'Địa chỉ email' : ['email'],
-    'date_jointed': ['Ngày gia nhập'],
-    'username': ['Tên đăng nhập']
-}
-
-
 def makeDict(querySet, result, className):
     for eachIterator in querySet.iterator():
         for eachKey in eachIterator.keys():
             if eachKey in className.keys():
-                l = MEMBER[eachKey]
-                l.append(eachIterator[eachKey])
+                list = className[eachKey]
+                list.append(eachIterator[eachKey])
                 result[eachKey] = l
     print(result)
     return result
@@ -49,6 +36,18 @@ def makeDict(querySet, result, className):
 
 # Create your models here.
 class Member(models.Model):
+    MEMBER = {
+        'phone' : 'Số điện thoại',
+        'address': 'Địa chỉ',
+        'commentName': 'Tên thường gọi',
+        'avatar' : 'Ảnh đại diện',
+        'first_name': 'Tên',
+        'last_name' : 'Họ',
+        'email' : 'Địa chỉ email',
+        'date_jointed': 'Ngày gia nhập',
+        'username': 'Tên đăng nhập'
+    }
+
     user = models.OneToOneField(User, on_delete=models.PROTECT)
     phone = models.CharField(max_length=12, blank=True)
     address = models.TextField(blank=True)
@@ -60,8 +59,8 @@ class Member(models.Model):
         user = User.objects.filter(id=user_id).values()
         print("Member: ", member)
         print("User: ", user)
-        result = makeDict(member, {}, MEMBER)
-        result = makeDict(user, result, MEMBER)
+        result = makeDict(member,{}, self.MEMBER)
+        result = makeDict(user, result, self.MEMBER)
         return result
 
     class Meta:

@@ -16,14 +16,23 @@ def pageReturn(request, webPage):
             menuData = menu_Nhanvien()
         else:
             menuData = menu_Thanhvien(menuData)
+    #print(menuData)
+    #print(menuData[LEFT])
+    #print(menuData[RIGHT])
     #print(menuData[WEB_PARAM])
-    try:
-        return render(request, html_file,
-                        {'leftMenu' : menuData[LEFT],
-                         'rightMenu': menuData[RIGHT],
-                         'webParam' : menuData[WEB_PARAM],
-                         }
-                      )
-    except Exception as e:
-        #print(e)
-        return render(request, 'error.html')
+    return render(request, html_file,
+                    {'leftMenu' : menuData[LEFT],
+                     'rightMenu': menuData[RIGHT],
+                     'webParam' : menuData[WEB_PARAM],
+                     }
+                  )
+    #try:
+    #    return render(request, html_file,
+    #                    {'leftMenu' : menuData[LEFT],
+    #                     'rightMenu': menuData[RIGHT],
+    #                     'webParam' : menuData[WEB_PARAM],
+    #                     }
+    #                  )
+    #except Exception as e:
+    #    print(e)
+    #    return render(request, 'error.html')

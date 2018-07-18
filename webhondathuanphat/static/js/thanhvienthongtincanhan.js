@@ -27,21 +27,16 @@ function saveInfo(btn_name) {
   var field_name = btn_name.substr(-(btn_name.length - field_name_pos));
   var input_text = "#" + field_name;
   alert('info: ' + $(input_text).val())
+  saveAll();
 }
 
 function changeAll(btn_name){
     if (btn_name.indexOf('unlock') == -1){
-      //$('#btn_unlock_all').show();
-      //$('#btn_lock_all').hide();
-      //$('#btn_save_all').show();
       $("button[id*='btn_unlock_']").show();
       $("button[id*='btn_lock_']").hide();
       $("button[id*='btn_save_']").show();
       $('input').attr('readonly', false);
     } else {
-      //$('#btn_unlock_all').hide();
-      //$('#btn_lock_all').show();
-      //$('#btn_save_all').hide();
       $("button[id*='btn_unlock_']").hide();
       $("button[id*='btn_lock_']").show();
       $("button[id*='btn_save_']").hide();
@@ -51,5 +46,25 @@ function changeAll(btn_name){
 }
 
 function saveAll() {
-  alert('info: ' + $('input').val())
+  $.ajax({
+    url : '/ajax/thanhvien/capnhatthongtincanhan',
+    type : 'POST',
+    data : {
+      'first_name' : $('#first_name').val(),
+      'last_name' : $('#last_name').val(),
+      'email' : $('#email').val(),
+      'phone' : $('#phone').val(),
+      'address' : $('#address').val(),
+      'commentName' : $('#commentName').val()
+    },
+    beforeSend:function(xhr, settings){
+      setToken(xhr, settings);
+    },
+    success : function(data){
+      showKetquaDangnhap(data['login']=='OK');
+    },
+    error: function(data){
+      alert('Something wrong, please contact webadmin!');
+    },
+  });
 }
