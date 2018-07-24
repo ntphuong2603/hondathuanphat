@@ -1,34 +1,24 @@
 from django.shortcuts import render
-from .baseMenu import DICH_VU, NHAN_VIEN
-from .baseMenu import webParam, get_HTML_File
+from .baseMenu import LEFT, RIGHT, WEB_PARAM, BAN_HANG, DICH_VU, NHAN_VIEN
+from .baseMenu import webParam, get_HTML_File, getSubMenuList
 
 mainMenuList = [DICH_VU, NHAN_VIEN]
 
-subMenuList = { DICH_VU[0]  : { 'xemlichhensuachua' : 'Xem lịch hẹn sửa chữa',
+subMenuList = { BAN_HANG[0] : { 'loaixe': 'Loại xe',
                               },
-                NHAN_VIEN[0]: { 'thongtincanhan'    : 'Thông tin cá nhân',
+                DICH_VU[0]  : { 'xemlichhensuachua' : 'Xem lịch hẹn sửa chữa',
+                              },
+                NHAN_VIEN[0]: { 'thongtinnhanvien'    : 'Thông tin cá nhân',
                                 'dangxuat'          : 'Đăng xuất',
                               },
               }
 
-def loadMenu():
-    returnMenu = {}
-    for each in range(len(mainMenuList)):
-        menuDict = {}
-        menuCode = mainMenuList[each][0]
-        menuName = mainMenuList[each][1]
-        subMenu = subMenuList[menuCode]
-        menuDict['menuName'] = menuName
-        menuDict['subMenu'] = subMenu
-        #print(menuDict)
-        returnMenu[menuCode] = menuDict
-    #print(returnMenu)
-    return returnMenu
 
-
-def getMenu():
-    return {LEFT : loadMenu(),
-            RIGHT : None,
+def getMenu(menuData):
+    #print('KHACH - BEFORE: ', menuData)
+    menuData = getSubMenuList(menuList=menuData, subMenuList=subMenuList)
+    #print('KHACH - AFTER: ', menuData)
+    return {LEFT : menuData[LEFT],
+            RIGHT : menuData[RIGHT],
             WEB_PARAM: webParam,
-            }
-    
+           }

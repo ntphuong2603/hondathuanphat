@@ -46,34 +46,7 @@
     								{% if each in webParam.loaiXe %}
     								<a class="dropdown-item" href="{% url 'theoLoaiXe' loaiXe=each %}">{{value}}</a>
     								{% else %}
-                      {% if 'dangxuat' in each %}
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#xacnhanDangxuat">{{value}}</a>
-                        <script type="text/javascript">
-                          function dangxuat(){
-                            //console.log("Checking member - User: " + $('#usr').val())
-                            $.ajax({
-                              url : '/ajax/dangxuat',
-                              type : 'POST',
-                              beforeSend:function(xhr, settings){
-                                xhr.setRequestHeader('X-CSRFToken', $('input[name=csrfmiddlewaretoken]').val());
-                                $('#btnDangxuat').html('Đang thực hiện đang xuất ...');
-                              },
-                              success : function(data){
-                                $('#xacnhanDangxuat').modal('hide');
-                                window.location.assign('/');
-                              },
-                              error: function(data){
-                                alert('Something wrong, please contact webadmin!')
-                              }
-                            });
-                          }
-                          function huyDangxuat(){
-                            window.location.assign('/thanhvien/thongtincanhan')
-                          }
-                        </script>
-                      {% else %}
-                        <a class="dropdown-item" href="{% url each %}">{{value}}</a>
-                      {% endif %}
+    								<a class="dropdown-item" href="{% url each %}">{{value}}</a>
     								{% endif %}
   								{% endfor %}
   							</div>
@@ -96,30 +69,30 @@
       {% csrf_token %}
   		{% block content %}
   		{% endblock %}
-  		<!-- Footer -->
-  		<div class="footer-copyright text-right p-1">
-    			Bản quyền thuộc công ty TNHH MTV Thương Mại <b>Thuận Phát</b> Nha Trang - GPKD: 1234567890
-  		</div>
-      <!-- Xác nhận đăng xuất -->
+      <!-- Đăng xuât -->
       <div class="modal" tabindex="-1" role="dialog" id="xacnhanDangxuat">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Xác nhận</h5>
+              <h5 class="modal-title">Xác nhận đăng xuất</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              Bạn muốn đăng xuất khỏi hệ thống?
+              Bạn đang muốn đăng xuất khỏi hệ thống, vui lòng xác nhận!
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" id="btnDangxuat" onclick="dangxuat();">Đúng</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="huyDangxuat();">Không</button>
+              <button type="button" class="btn btn-danger" id="btnXacnhanDangxuat" onclick="veTrangchu();">Xác nhận</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Hủy đăng xuất</button>
             </div>
           </div>
         </div>
       </div>
+  		<!-- Footer -->
+  		<div class="footer-copyright text-right p-1">
+    			Bản quyền thuộc công ty TNHH MTV Thương Mại <b>Thuận Phát</b> Nha Trang - GPKD: 1234567890
+  		</div>
   	</div>
   </body>
 </html>

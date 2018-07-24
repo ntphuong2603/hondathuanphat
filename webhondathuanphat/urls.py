@@ -10,6 +10,8 @@ urlpatterns = [
 	path('laixeantoan', views.laixeantoan, name='laixeantoan'),
 	path('tintuc', views.tintuc, name='tintuc'),
 	path('tuyendung', views.tuyendung, name='tuyendung'),
+    path('thanhvien/thongtincanhan', views.thongtincanhan, name='thongtinthanhvien'),
+    path('nhanvien/thongtincanhan', views.thongtincanhan, name='thongtinnhanvien'),
     #viewsBanhang
     path('banhang/theoLoaiXe/<int:loaiXe>', banhang.theoLoaiXe, name='theoLoaiXe'),
     #viewsDichvu
@@ -17,19 +19,19 @@ urlpatterns = [
     #viewsThanhvien
     path('thanhvien/dangky', thanhvien.dangky, name='dangky'),
     path('thanhvien/dangnhap', thanhvien.dangnhap, name='dangnhap'),
-    path('thanhvien/thongtincanhan', thanhvien.thongtincanhan, name='thongtincanhan'),
     path('thanhvien/thongtinxe', thanhvien.thongtinxe, name='thongtinxe'),
-    path('thanhvien/dangxuat', thanhvien.dangxuat, name='dangxuat'),
     #viewsNhanvien
+    path('nhanvien/xemlichhensuachua', nhanvien.xemlichhensuachua, name='xemlichhensuachua'),
+    path('nhanvien/loaixe', nhanvien.loaixe, name='loaixe'),
     #ajax functions for thanhvien
-    url(r'^ajax/thanhvien/dangnhap$', thanhvien.dangnhap),
+    url(r'^ajax/thanhvien/dangnhap$', views.thanhvienDangnhap),
+    url(r'^ajax/nhanvien/dangnhap$', views.nhanvienDangnhap),
+    url(r'^ajax/capnhatthongtin$', views.thongtincanhan),
+    url(r'^ajax/dangxuat$', views.dangxuat),
 	url(r'^ajax/thanhvien/kiemtraTendangnhap$', thanhvien.kiemtraTendangnhap),
-	url(r'^ajax/thanhvien/thanhvienDangxuat$', thanhvien.thanhvienDangxuat),
-	url(r'^ajax/thanhvien/capnhatthongtincanhan$', thanhvien.capnhatthongtincanhan),
-	url(r'^ajax/thanhvien/capnhatmatkhau$', thanhvien.capnhatmatkhau),
+	url(r'^ajax/capnhatmatkhau$', thanhvien.capnhatmatkhau),
     #ajax functions for dichvu
     url(r'^ajax/dichvu/dangkyLichhen$', dichvu.henlichsuachua),
     #ajax functions for nhanvien
-    url(r'^ajax/nhanvien/dangnhap$', nhanvien.dangnhap),
-    #url(r'^ajax/nhanvien/changeBookingStatus$', nhanvien.thanhdoiTrangthaiBooking),
+    url(r'^ajax/nhanvien/changeBookingStatus$', nhanvien.thaydoiTrangthaiBooking),
 ]

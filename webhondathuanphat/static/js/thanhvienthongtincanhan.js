@@ -26,7 +26,7 @@ function saveInfo(btn_name) {
   var field_name_pos = btn_name.indexOf('_', 5) + 1;
   var field_name = btn_name.substr(-(btn_name.length - field_name_pos));
   var input_text = "#" + field_name;
-  alert('info: ' + $(input_text).val())
+  //alert('info: ' + $(input_text).val())
   saveAll();
 }
 
@@ -61,7 +61,8 @@ function saveAll() {
       setToken(xhr, settings);
     },
     success : function(data){
-      showKetquaDangnhap(data['login']=='OK');
+      window.location.reload(true);
+      //showKetquaDangnhap(data['login']=='OK');
     },
     error: function(data){
       alert('Something wrong, please contact webadmin!');

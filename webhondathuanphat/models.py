@@ -27,9 +27,8 @@ def makeDict(querySet, result, className):
     for eachIterator in querySet.iterator():
         for eachKey in eachIterator.keys():
             if eachKey in className.keys():
-                list = className[eachKey]
-                list.append(eachIterator[eachKey])
-                result[eachKey] = l
+                strList = [className[eachKey], eachIterator[eachKey]]
+                result[eachKey] = strList
     print(result)
     return result
 

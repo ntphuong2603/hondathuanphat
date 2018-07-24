@@ -17,6 +17,9 @@ WEB_PARAM = 'webParam'
 LOAI_XE = 'loaiXe'
 LEFT = 'left'
 RIGHT = 'right'
+MENU_NAME = 'menuName'
+SUB_MENU = 'subMenu'
+ERROR_HTML_FILE = 'error.html'
 
 webParam = {SELECTED_MENU: None, JS_FILE: None, WEB_DATA: None, LOAI_XE: None}
 
@@ -28,3 +31,16 @@ def get_HTML_File(request):
     #print(webParam['jsFile'])
     #print(requestPathString + '.html')
     return (requestPathString + '.html')
+
+
+def getSubMenuList(menuList, subMenuList):
+    #print(menuList.keys())
+    for eachSide in [LEFT, RIGHT]:
+        for eachMenu in menuList[eachSide].keys():
+            #print(subMenuList.keys())
+            if eachMenu in subMenuList.keys():
+                #print(menuList[eachMenu][SUB_MENU])
+                #print(menuList[eachSide][eachMenu][SUB_MENU])
+                #print(subMenuList[eachMenu])
+                menuList[eachSide][eachMenu][SUB_MENU] = subMenuList[eachMenu]
+    return menuList

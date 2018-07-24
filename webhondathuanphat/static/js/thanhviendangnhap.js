@@ -1,7 +1,3 @@
-function setToken(xhr, settings){
-  xhr.setRequestHeader('X-CSRFToken', $('input[name=csrfmiddlewaretoken]').val());
-}
-
 function veTrangcanhan() {
   var pageString = '/thanhvien/thongtincanhan';
   if ($('#nhanvienCheck').val() == 'True'){
@@ -33,29 +29,33 @@ function changeLoginState(checkbox_ID){
   //console.log($(checkbox).val());
 }
 
+function get_urlString (isNhanvien){
+  if (isNhanvien){
+    return '/ajax/nhanvien/dangnhap';
+  } else {
+    return '/ajax/thanhvien/dangnhap';
+  }
+}
+
 function dangnhap(){
   //console.log("Member signIN function !!! - U: " + $('#usr').val() + " - P: " + $('#pwd').val())
   if ($('#usr').val().length > 0 && $('#pwd').val().length > 0){
     $('#usrError').hide();
     $('#pwdError').hide();
-    var urlString = '/ajax/thanhvien/dangnhap';
-    if ($('#nhanvienCheck').val() == 'True'){
-      urlString = urlString.replace('thanh', 'nhan');
-    }
     $.ajax({
-      url : urlString,
+      url : get_urlString($('#nhanvienCheck').val() == 'True'),
       type : 'POST',
       data : {
         'usr':$('#usr').val(),
         'pwd':$('#pwd').val()
       },
       beforeSend:function(xhr, settings){
-        setToken(xhr, settings);
+        xhr.setRequestHeader('X-CSRFToken',
+                             $("input[name='csrfmiddlewaretoken'").val());
         $('#btnDangnhap').html('Đang kiểm tra ...');
       },
       success : function(data){
-        showKetquaDangnhap(data['login']=='OK');
-
+        showKetquaDangnhap(data['login']=='OK');        
       },
       error: function(data){
         alert('Something wrong, please contact webadmin!');
