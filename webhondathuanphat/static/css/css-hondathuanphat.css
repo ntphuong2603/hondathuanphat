@@ -23,14 +23,14 @@
 }
 
 .navbar .nav-item a:hover, .navbar .nav-item .active, .dropdown-menu .nav-link{
-    color: #ff3547!important;
-    background-color: white;
-    font-weight: bold;
-    border-radius: 2rem;
+  color: #ff3547!important;
+  background-color: white;
+  font-weight: bold;
+  border-radius: 2rem;
 }
 
 li.dropdown:hover > .dropdown-menu {
-    display: block;
+  display: block;
 }
 
 .navbar .nav-item .nav-link, .navbar .nav-item .dropdown-item {
@@ -47,4 +47,11 @@ li.dropdown:hover > .dropdown-menu {
 
 .contentHeight {
   height: 430px;
+}
+
+.myPosition {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  right: 0;
 }

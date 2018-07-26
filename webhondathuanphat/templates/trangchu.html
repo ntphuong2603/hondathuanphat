@@ -2,7 +2,7 @@
 {% block content %}
 <!-- New products slideshows -->
   <style type="text/css">
-    #productSlides {
+    #productSlides, .productCard {
       background-color: gray;
     }
     .carousel-inner img {
@@ -10,16 +10,11 @@
       max-width: 90%;
       height: auto;
       object-fit: contain;
-    }
-    @media only screen and (min-device-width: 450px) {
-      .carousel-inner img {
-        margin: auto;
-        max-height: 450px;
-        object-fit: contain;
-      }
+    }    
     }
   </style>
-
+  {% load static %}
+  {% if webParam.mobile == None %}
   <div class="container-fuild-center py-1">
     <div id="productSlides" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -28,7 +23,6 @@
         <li data-target="#productSlides" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
-        {% load static %}
         <div class="carousel-item active">
           <img class="d-block w-70" src="{% static "images/img_0.jpg" %}" alt="First slide">
         </div>
@@ -51,4 +45,49 @@
       </a>
     </div>
   </div>
+  {% else %}
+  <div class="row">
+      <div class="col pt-2">
+        <ul class="nav nav-pills nav-justified">
+          {% for loaiXe, tenLoaiXe in subMenu.items %}
+            <li class="nav-item p-1">
+              <a class="nav-link {% if loaiXe == webParam.chonSubMenu %} active {% endif %}" href="{% url 'theoLoaiXe' loaiXe=loaiXe %}">{{ tenLoaiXe }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="row px-3">
+      <div class="col-sm-3 py-3">
+        <div class="card productCard">
+            <img class="card-img-top" src="{% static "images/img_0.jpg" %}" alt="Card img cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Body card</p>
+              <a href="#" class="btn btn-primary">Xem chi tiết</a>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-3 py-3">
+        <div class="card productCard">
+            <img class="card-img-top" src="{% static "images/img_1.jpg" %}" alt="Card img cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Body card</p>
+              <a href="#" class="btn btn-primary">Xem chi tiết</a>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-3 py-3">
+        <div class="card productCard">
+            <img class="card-img-top" src="{% static "images/img_2.jpg" %}" alt="Card img cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Body card</p>
+              <a href="#" class="btn btn-primary">Xem chi tiết</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
 {% endblock %}

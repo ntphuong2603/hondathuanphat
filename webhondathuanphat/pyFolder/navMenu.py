@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .baseMenu import MOBILE
 from .baseMenu import TRANG_CHU, BAN_HANG, DICH_VU, PHU_TUNG, LAI_XE_AN_TOAN, THANH_VIEN, TIN_TUC, TUYEN_DUNG, NHAN_VIEN
 from .baseMenu import webParam, SELECTED_MENU, get_HTML_File, LEFT, RIGHT, WEB_PARAM, ERROR_HTML_FILE, MENU_NAME, SUB_MENU
 from .navMenuKhach import getMenu as menu_Khach
@@ -8,6 +9,8 @@ from .navMenuThanhvien import getMenu as menu_Thanhvien
 MENU_POSITION = 6
 
 mainMenuList = [TRANG_CHU, BAN_HANG, DICH_VU, PHU_TUNG, LAI_XE_AN_TOAN, THANH_VIEN, TIN_TUC, TUYEN_DUNG]
+
+MOBILES = ['iphone', 'ipad', 'android']
 
 def initial_Menu(menuData):
     for eachSide in [LEFT, RIGHT]:
@@ -22,6 +25,14 @@ def initial_Menu(menuData):
                 menuName = each[1]
                 menuData[eachSide][menuCode] = {MENU_NAME: menuName, SUB_MENU: None}
     return menuData
+
+
+def isMobile(strDevices):
+    #ua = request.META.get('HTTP_USER_AGENT', '').lower()
+    for eachMobile in MOBILES:
+        if strDevices.find(eachMobile) > 0:
+            return MOBILE
+    return None
 
 
 def pageReturn(request, webPage):
@@ -46,6 +57,10 @@ def pageReturn(request, webPage):
     #print(get_HTML_File(request=request))
     html_file = get_HTML_File(request=request)
     print("File html template: ", html_file)
+    print(request.META['HTTP_USER_AGENT'])
+    print(request.META['REMOTE_ADDR'])
+    #print(request.keys())
+    webParam[MOBILE] = isMobile(request.META.get('HTTP_USER_AGENT', '').lower())
     try:
         return render(request, html_file,
                         {'leftMenu' : menuData[LEFT],

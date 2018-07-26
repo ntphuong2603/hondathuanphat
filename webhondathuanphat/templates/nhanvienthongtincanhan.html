@@ -1,0 +1,54 @@
+{% extends "bieumau.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6 py-5">
+    <div class="form-group row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-3">
+        <button type="button" class="btn btn-danger" id="btn_lock_all" data-toggle="tooltip" data-placement="top" title="Đang khóa tất cả" onclick="changeAll(this.id);">
+          <i class="fas fa-lock"></i>
+        </button>
+        <button type="button" style="display: none" class="btn btn-primary" id="btn_unlock_all" data-toggle="tooltip" data-placement="top" title="Đang mở khóa tất cả" onclick="changeAll(this.id);">
+          <i class="fas fa-unlock-alt"></i>
+        </button>
+        <button type="button" style="display: none" class="btn btn-primary" id="btn_save_all" data-toggle="tooltip" data-placement="top" title="Cập nhật tất cả thay đổi" onclick="saveAll();">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+    </div>
+    {% for name, value in webParam.webData.items %}
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">{{value.0}}</label>
+      <div class="col-sm-6">
+        <input type="text" readonly class="form-control" id="{{name}}" value="{{value.1}}">
+      </div>
+      <div class="col-sm-3">
+        <button type="button" class="btn btn-danger" id="btn_lock_{{name}}" data-toggle="tooltip" data-placement="top" title="Đã khóa" onclick="changeStatus(this.id);">
+          <i class="fas fa-lock"></i>
+        </button>
+        <button type="button" style="display: none" class="btn btn-primary" id="btn_unlock_{{name}}" data-toggle="tooltip" data-placement="top" title="Đang mở khóa" onclick="changeStatus(this.id);">
+          <i class="fas fa-unlock-alt"></i>
+        </button>
+        <button type="button" style="display: none" class="btn btn-primary" id="btn_save_{{name}}" data-toggle="tooltip" data-placement="top" title="Cập nhật thay đổi" onclick="saveInfo(this.id);">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label">Mật khẩu mới</label>
+      <div class="col-sm-6">
+        <input type="password" class="form-control" id="pwd">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label">Xác nhận mật khẩu mới</label>
+      <div class="col-sm-6">
+        <input type="password" class="form-control" id="confirm_pwd">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

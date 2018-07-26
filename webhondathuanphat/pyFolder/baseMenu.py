@@ -15,13 +15,14 @@ JS_FILE = 'jsFile'
 WEB_DATA = 'webData'
 WEB_PARAM = 'webParam'
 LOAI_XE = 'loaiXe'
+MOBILE = 'mobile'
 LEFT = 'left'
 RIGHT = 'right'
 MENU_NAME = 'menuName'
 SUB_MENU = 'subMenu'
 ERROR_HTML_FILE = 'error.html'
 
-webParam = {SELECTED_MENU: None, JS_FILE: None, WEB_DATA: None, LOAI_XE: None}
+webParam = {SELECTED_MENU: None, JS_FILE: None, WEB_DATA: None, LOAI_XE: None, MOBILE: None}
 
 def get_HTML_File(request):
     requestPathString = request.path.replace('/', '').strip()
