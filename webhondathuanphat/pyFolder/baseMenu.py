@@ -29,8 +29,10 @@ def get_HTML_File(request):
     if len(requestPathString) == 0:
         requestPathString = TRANG_CHU[0]
     webParam['jsFile'] = 'js/' + requestPathString + '.js'
-    #print(webParam['jsFile'])
-    #print(requestPathString + '.html')
+    if (requestPathString.find('theoLoaixe') > 1) :
+        requestPathString = 'banhangtheoLoaixe'
+    elif (requestPathString.find('theoDoixe') > 1) :
+        requestPathString = 'banhangtheoDoixe'
     return (requestPathString + '.html')
 
 

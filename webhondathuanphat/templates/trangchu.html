@@ -10,7 +10,7 @@
       max-width: 90%;
       height: auto;
       object-fit: contain;
-    }    
+    }
     }
   </style>
   {% load static %}
@@ -49,9 +49,10 @@
   <div class="row">
       <div class="col pt-2">
         <ul class="nav nav-pills nav-justified">
+          {{ subMenu.items }}
           {% for loaiXe, tenLoaiXe in subMenu.items %}
             <li class="nav-item p-1">
-              <a class="nav-link {% if loaiXe == webParam.chonSubMenu %} active {% endif %}" href="{% url 'theoLoaiXe' loaiXe=loaiXe %}">{{ tenLoaiXe }}</a>
+              <a class="nav-link {% if loaiXe == webParam.chonSubMenu %} active {% endif %}" href="{% url 'theoLoaixe' loaiXe=loaiXe %}">{{ tenLoaiXe }}</a>
             </li>
           {% endfor %}
         </ul>

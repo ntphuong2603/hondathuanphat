@@ -61,13 +61,13 @@ def pageReturn(request, webPage):
     print(request.META['REMOTE_ADDR'])
     #print(request.keys())
     webParam[MOBILE] = isMobile(request.META.get('HTTP_USER_AGENT', '').lower())
-    try:
-        return render(request, html_file,
-                        {'leftMenu' : menuData[LEFT],
-                         'rightMenu': menuData[RIGHT],
-                         'webParam' : menuData[WEB_PARAM],
-                         }
-                      )
-    except Exception as e:
-        print(e)
-        return render(request, ERROR_HTML_FILE)
+    #try:
+    return render(request, html_file,
+                    {'leftMenu' : menuData[LEFT],
+                     'rightMenu': menuData[RIGHT],
+                     'webParam' : menuData[WEB_PARAM],
+                     }
+                  )
+    #except Exception as e:
+    #    print(e)
+    #    return render(request, ERROR_HTML_FILE)

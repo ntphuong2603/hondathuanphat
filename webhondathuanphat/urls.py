@@ -13,7 +13,8 @@ urlpatterns = [
     path('thanhvien/thongtincanhan', views.thongtincanhan, name='thongtinthanhvien'),
     path('nhanvien/thongtincanhan', views.thongtincanhan, name='thongtinnhanvien'),
     #viewsBanhang
-    path('banhang/theoLoaiXe/<int:loaiXe>', banhang.theoLoaiXe, name='theoLoaiXe'),
+    path('banhang/theoLoaixe/<int:loaiXe>', banhang.theoLoaixe, name='theoLoaixe'),
+    path('banhang/theoDoixe/<str:doiXe>', banhang.theoDoixe, name='theoDoixe'),
     #viewsDichvu
     path('dichvu/hensuachua', dichvu.henlichsuachua, name='henlichsuachua'),
     #viewsThanhvien

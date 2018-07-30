@@ -49,7 +49,7 @@
   							<div class="dropdown-menu" aria-labelledby="navbarDropdown_{{key}}">
   								{% for each, value in dict.subMenu.items %}
     								{% if each in webParam.loaiXe %}
-    								<a class="dropdown-item" href="{% url 'theoLoaiXe' loaiXe=each %}">{{value}}</a>
+    								<a class="dropdown-item" href="{% url 'theoLoaixe' loaiXe=each %}">{{value}}</a>
     								{% else %}
                       {% if 'dangxuat' in each %}
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#xacnhanDangxuat">{{value}}</a>

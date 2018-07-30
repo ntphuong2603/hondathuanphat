@@ -1,0 +1,630 @@
+{
+   "sh-300cc": {
+      "spec": {
+         "Khối lượng bản thân": "169 kg",
+         "Dài x Rộng x Cao": "2.130 mm x 730 mm x 1.195 mm",
+         "Khoảng cách trục bánh xe": "1.440 mm",
+         "Độ cao yên": "805 mm",
+         "Khoảng sáng gầm xe": "130 mm",
+         "Dung tích bình xăng": "9,1 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 110/70-16 M/C ",
+         "Loại động cơ": "SOHC, 4 kỳ, xy-lanh đơn 4 van, làm mát bằng dung dịch; đáp ứng Euro 4",
+         "Dung tích xy-lanh": "279 cm3",
+         "Đường kính x hành trình pít-tông": "72,0 mm x 68,6 mm",
+         "Tỉ số nén": "10,5:1",
+         "Công suất tối đa": "18,5kW/7.500 vòng/phút",
+         "Mô-men cực đại": "25,5Nm/5.000 vòng/phút",
+         "Dung tích nhớt máy": "Sau khi xả: 1,2 lít ",
+         "Loại truyền động": "Biến thiên vô cấp"
+      },
+      "data": {
+         "CLR_0": {
+            "color-name": "Đỏ đen",
+            "price": "269.000.000 VNĐ",
+            "picture": "[sh-300cc]-[CLR_0].png"
+         },
+         "CLR_1": {
+            "color-name": "Trắng đen",
+            "price": "269.000.000 VNĐ",
+            "picture": "[sh-300cc]-[CLR_1].png"
+         }
+      }
+   },
+   "lead-125cc": {
+      "spec": {
+         "Khối lượng bản thân": "112 kg",
+         "Dài x Rộng x Cao": "1.842mm x 680mm x 1.130mm",
+         "Khoảng cách trục bánh xe": "1.273mm",
+         "Độ cao yên": "760mm",
+         "Khoảng sáng gầm xe": "138mm",
+         "Dung tích bình xăng": "6,0 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 90/90-12 44J ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ, giảm chấn thủy lực",
+         "Loại động cơ": "PGM-FI, Xăng, 4 kỳ, 1 xi-lanh,  làm mát bằng dung dịch",
+         "Dung tích xy-lanh": "124,8 cm3",
+         "Đường kính x hành trình pít-tông": "52,4mm x 57,9mm",
+         "Tỉ số nén": "11:1",
+         "Công suất tối đa": "7,90 kW/7500 vòng/phút",
+         "Mô-men cực đại": "11,4 N.m/5000 vòng/phút",
+         "Dung tích nhớt máy": "0,9 lít khi rã mãy/ 0,8 lít khi thay nhớt",
+         "Loại truyền động": "Vô cấp, điều khiển tự động",
+         "Hệ thống khởi động": "Điện"
+      },
+      "data": {
+         "NHB25": {
+            "color-name": "Đen",
+            "price": "37.490.000 VNĐ",
+            "picture": "[lead-125cc]-[NHB25].png"
+         },
+         "R350": {
+            "color-name": "Đỏ (Đỏ Đen)",
+            "price": "37.490.000 VNĐ",
+            "picture": "[lead-125cc]-[R350].png"
+         }
+      }
+   },
+   "air-blade-125cc": {
+      "spec": {
+         "Khối lượng bản thân": "110kg",
+         "Dài x Rộng x Cao": "1.881 x 687 x 1.111mm",
+         "Khoảng cách trục bánh xe": "1.288mm",
+         "Độ cao yên": "777mm",
+         "Khoảng sáng gầm xe": "131mm",
+         "Dung tích bình xăng": "4,4lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 80/90-14 M/C 40P ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ, giảm chấn thủy lực",
+         "Loại động cơ": "PGM-FI, Xăng, 4 kỳ, 1 xy lanh, làm mát bằng dung dịch",
+         "Dung tích xy-lanh": "124,9cm3",
+         "Đường kính x hành trình pít-tông": "52,4mm x 57,9mm",
+         "Tỉ số nén": "11:1",
+         "Công suất tối đa": "8,4kW/8.500 vòng/phút",
+         "Mô-men cực đại": "11,26N.m/5.000 vòng/phút",
+         "Dung tích nhớt máy": "0,9 lít khi rã máy/ 0,8 lít khi thay nhớt",
+         "Loại truyền động": "Dây đai, biến thiên vô cấp",
+         "Hệ thống khởi động": "Điện"
+      },
+      "data": {
+         "NHA62": {
+            "color-name": "Bạc Đen",
+            "price": "37.990.000 VNĐ",
+            "picture": "[air-blade-125cc]-[NHA62].png"
+         },
+         "R340": {
+            "color-name": "Đỏ Đen",
+            "price": "37.990.000 VNĐ",
+            "picture": "[air-blade-125cc]-[R340].png"
+         },
+         "NHB35": {
+            "color-name": "Đen Trắng",
+            "price": "37.990.000 VNĐ",
+            "picture": "[air-blade-125cc]-[NHB35].png"
+         },
+         "B189": {
+            "color-name": "Xanh Đen",
+            "price": "37.990.000 VNĐ",
+            "picture": "[air-blade-125cc]-[B189].png"
+         }
+      }
+   },
+   "pcx-125cc150cc": {
+      "spec": {
+         "Khối lượng bản thân": "130kg",
+         "Dài x Rộng x Cao": "1.923 x 745 x 1.107mm",
+         "Khoảng cách trục bánh xe": "1.313mm",
+         "Độ cao yên": "764mm",
+         "Khoảng sáng gầm xe": "137mm",
+         "Dung tích bình xăng": "8 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 100/80-14 M/C 48P ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ, giảm chấn thủy lực",
+         "Loại động cơ": "PGM-FI, Xăng, 4 kỳ, 1 xy lanh, làm mát bằng dung dịch",
+         "Dung tích xy-lanh": "124,9cm3 ",
+         "Đường kính x hành trình pít-tông": "52,4mm x 57,9mm",
+         "Tỉ số nén": "11:1 ",
+         "Công suất tối đa": "8,99kW/8.500 vòng/phút ",
+         "Mô-men cực đại": "11,8N.m/5.000 vòng/phút ",
+         "Dung tích nhớt máy": "0,9 lít khi rã máy/ 0,8 lít khi thay nhớt",
+         "Loại truyền động": "Dây đai, biến thiên vô cấp",
+         "Hệ thống khởi động": "Điện"
+      },
+      "data": {
+         "NHB35": {
+            "color-name": "Trắng Đen",
+            "price": "56.490.000 VNĐ",
+            "picture": "[pcx-125cc150cc]-[NHB35].png"
+         },
+         "NHB86": {
+            "color-name": "Bạc Đen",
+            "price": "56.490.000 VNĐ",
+            "picture": "[pcx-125cc150cc]-[NHB86].png"
+         },
+         "NHB25": {
+            "color-name": "Đen",
+            "price": "56.490.000 VNĐ",
+            "picture": "[pcx-125cc150cc]-[NHB25].png"
+         },
+         "R368": {
+            "color-name": "Đỏ",
+            "price": "56.490.000 VNĐ",
+            "picture": "[pcx-125cc150cc]-[R368].png"
+         }
+      }
+   },
+   "sh-mode-125cc": {
+      "spec": {
+         "Khối lượng bản thân": "118kg",
+         "Dài x Rộng x Cao": "1.930mm x 669mm x 1.105mm",
+         "Khoảng cách trục bánh xe": "1.304mm",
+         "Độ cao yên": "765mm",
+         "Khoảng sáng gầm xe": "146mm",
+         "Dung tích bình xăng": "5,5 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 80/90-16 M/C 43P ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ, giảm chấn thủy lực, 5 chế độ tải",
+         "Loại động cơ": "PGM-FI, xăng, 4 kỳ, 1 xy-lanh, làm mát bằng dung dịch",
+         "Dung tích xy-lanh": "124,9cm3",
+         "Đường kính x hành trình pít-tông": "52,4mm x 57,9mm",
+         "Tỉ số nén": "11:1",
+         "Công suất tối đa": "8,36 kW/ 8.500 vòng/ phút",
+         "Mô-men cực đại": "11,7 N.m/ 5.000 vòng/ phút",
+         "Dung tích nhớt máy": "0,8 lít (thay dầu) ",
+         "Loại truyền động": "Dây đai, biến thiên vô cấp",
+         "Hệ thống khởi động": "Điện"
+      },
+      "data": {
+         "NHB35": {
+            "color-name": "Trắng Sứ (Trắng đen)",
+            "price": "52.490.000 VNĐ",
+            "picture": "[sh-mode-125cc]-[NHB35].png"
+         },
+         "R350": {
+            "color-name": "Đỏ đậm (Đỏ đen)",
+            "price": "52.490.000 VNĐ",
+            "picture": "[sh-mode-125cc]-[R350].png"
+         },
+         "NHB18": {
+            "color-name": "Bạc mờ (Bạc đen)",
+            "price": "52.490.000 VNĐ",
+            "picture": "[sh-mode-125cc]-[NHB18].png"
+         }
+      }
+   },
+   "vision-110cc": {
+      "spec": {
+         "Khối lượng bản thân": "97kg",
+         "Dài x Rộng x Cao": "1.863mm x 686mm x 1.088mm",
+         "Khoảng cách trục bánh xe": "1.256mm",
+         "Độ cao yên": "750mm",
+         "Khoảng sáng gầm xe": "139mm",
+         "Dung tích bình xăng": "5,2 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 80/90 - 14 M/C 40P ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ đơn, giảm chấn thủy lực",
+         "Loại động cơ": "PGM-FI, xăng, 4 kỳ, 1 xy-lanh, làm mát bằng không khí",
+         "Dung tích xy-lanh": "108,2cm3",
+         "Đường kính x hành trình pít-tông": "50mm x 51,106mm",
+         "Tỉ số nén": "9,5:1",
+         "Công suất tối đa": "6,59 kW/7.500 vòng/phút",
+         "Mô-men cực đại": "9,23Nm/5.500 vòng/phút",
+         "Dung tích nhớt máy": "0,8 lít khi rã máy/0,7 lít khi thay nhớt",
+         "Loại truyền động": "Tự động, biến thiên vô cấp",
+         "Hệ thống khởi động": "Điện"
+      },
+      "data": {
+         "CLR_2": {
+            "color-name": "Xanh (Xanh nâu)",
+            "price": "29.990.000 VNĐ",
+            "picture": "[vision-110cc]-[CLR_2].png"
+         },
+         "CLR_3": {
+            "color-name": "Đỏ (Đỏ nâu)",
+            "price": "29.990.000 VNĐ",
+            "picture": "[vision-110cc]-[CLR_3].png"
+         },
+         "CLR_4": {
+            "color-name": "Trắng ngà (Vàng nhạt nâu)",
+            "price": "29.990.000 VNĐ",
+            "picture": "[vision-110cc]-[CLR_4].png"
+         },
+         "CLR_5": {
+            "color-name": "Đỏ đậm (Đỏ đen)",
+            "price": "29.990.000 VNĐ",
+            "picture": "[vision-110cc]-[CLR_5].png"
+         },
+         "CLR_6": {
+            "color-name": "Hồng (Hồng nâu)",
+            "price": "29.990.000 VNĐ",
+            "picture": "[vision-110cc]-[CLR_6].png"
+         },
+         "CLR_7": {
+            "color-name": "Trắng (Trắng nâu)",
+            "price": "29.990.000 VNĐ",
+            "picture": "[vision-110cc]-[CLR_7].png"
+         }
+      }
+   },
+   "sh-125-150cc": {
+      "spec": {
+         "Khối lượng bản thân": "SH125i/150i CBS:  135kg ",
+         "Dài x Rộng x Cao": "2.026mm x 740mm x 1.158mm",
+         "Khoảng cách trục bánh xe": "1.340mm",
+         "Độ cao yên": "799mm",
+         "Khoảng sáng gầm xe": "146mm",
+         "Dung tích bình xăng": "7,5 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 100/80 - 16 M/C 50P ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ, giảm chấn thủy lực",
+         "Loại động cơ": "PGM-FI, xăng, 4 kỳ, 1 xy-lanh, làm mát bằng dung dịch",
+         "Dung tích xy-lanh": "124,9cm³ (SH 125i) ",
+         "Đường kính x hành trình pít-tông": "52,4mm x 57,9mm (SH125i) ",
+         "Tỉ số nén": "11:1 (SH 125i) ",
+         "Công suất tối đa": "9,1kW/8750 vòng/phút (SH 125i) ",
+         "Mô-men cực đại": "11,6N.m/6500 vòng/phút (SH 125i) ",
+         "Dung tích nhớt máy": "0,9 lít khi rã máy ",
+         "Hộp số": "Vô cấp, điều khiển tự động",
+         "Hệ thống khởi động": "Điện"
+      },
+      "data": {
+         "CLR_8": {
+            "color-name": "Đen",
+            "price": "89.990.000 VNĐ",
+            "picture": "[sh-125-150cc]-[CLR_8].png"
+         },
+         "CLR_9": {
+            "color-name": "Đỏ",
+            "price": "89.990.000 VNĐ",
+            "picture": "[sh-125-150cc]-[CLR_9].png"
+         },
+         "CLR_10": {
+            "color-name": "Trắng",
+            "price": "89.990.000 VNĐ",
+            "picture": "[sh-125-150cc]-[CLR_10].png"
+         },
+         "CLR_11": {
+            "color-name": "Bạc",
+            "price": "89.990.000 VNĐ",
+            "picture": "[sh-125-150cc]-[CLR_11].png"
+         },
+         "CLR_12": {
+            "color-name": "Xanh Lục - Đen",
+            "price": "89.990.000 VNĐ",
+            "picture": "[sh-125-150cc]-[CLR_12].png"
+         },
+         "CLR_13": {
+            "color-name": "Xanh Lam - Đen",
+            "price": "89.990.000 VNĐ",
+            "picture": "[sh-125-150cc]-[CLR_13].png"
+         }
+      }
+   },
+   "future-125cc": {
+      "spec": {
+         "Khối lượng bản thân": "105 kg ",
+         "Dài x Rộng x Cao": "1.931 x 711 x 1.083 mm",
+         "Khoảng cách trục bánh xe": "1.258 mm",
+         "Độ cao yên": "756 mm",
+         "Khoảng sáng gầm xe": "133 mm",
+         "Dung tích bình xăng": "4,6 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 70/90 - 17 M/C 38P ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ, giảm chấn thủy lực",
+         "Loại động cơ": "Xăng, làm mát bằng không khí ",
+         "Dung tích xy-lanh": "124,9 cm3",
+         "Đường kính x hành trình pít-tông": "52,4 mm x 57,9 mm",
+         "Tỉ số nén": "9,3 : 1",
+         "Công suất tối đa": "7,11 kW/7.500 vòng/phút",
+         "Mô-men cực đại": "10,6 Nm/5.500 vòng/phút",
+         "Dung tích nhớt máy": "0,9 lít (rã máy)",
+         "Loại truyền động": "4 số tròn",
+         "Hệ thống khởi động": "Điện & Đạp chân"
+      },
+      "data": {
+         "NHA62": {
+            "color-name": "Bạc đen",
+            "price": "30.190.000 VNĐ",
+            "picture": "[future-125cc]-[NHA62].png"
+         },
+         "NHB25": {
+            "color-name": "Đen đỏ",
+            "price": "30.190.000 VNĐ",
+            "picture": "[future-125cc]-[NHB25].png"
+         },
+         "R340": {
+            "color-name": "Đỏ đen",
+            "price": "30.190.000 VNĐ",
+            "picture": "[future-125cc]-[R340].png"
+         }
+      }
+   },
+   "blade-110cc": {
+      "spec": {
+         "Khối lượng bản thân": "Phiên bản tiêu chuẩn: 98kg ",
+         "Dài x Rộng x Cao": "Phiên bản tiêu chuẩn: 1.920 x 690 x 1.075 mm ",
+         "Khoảng cách trục bánh xe": "1.217 mm",
+         "Độ cao yên": "769 mm",
+         "Khoảng sáng gầm xe": "141 mm",
+         "Dung tích bình xăng": "3,7 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 70/90 -17 M/C 38P ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ, giảm chấn thủy lực",
+         "Loại động cơ": "Xăng, 4 kỳ, 1 xi-lanh, làm mát bằng không khí",
+         "Dung tích xy-lanh": "109,1cm3",
+         "Đường kính x hành trình pít-tông": "50,0 mm x 55,6 mm",
+         "Tỉ số nén": "9,0:1",
+         "Công suất tối đa": "6,18 kW/7.500 vòng/phút",
+         "Mô-men cực đại": "8,65 Nm/5.500 vòng/phút",
+         "Dung tích nhớt máy": "1 lít khi rã máy/ 0,8 lít khi thay nhớt",
+         "Hộp số": "Cơ khí, 4 số tròn",
+         "Hệ thống khởi động": "Điện/ Đạp chân"
+      },
+      "data": {
+         "R263": {
+            "color-name": "Đỏ Đen Trắng",
+            "price": "Chưa có giá",
+            "picture": "[blade-110cc]-[R263].png"
+         },
+         "R340": {
+            "color-name": "Đỏ Đen",
+            "price": "Chưa có giá",
+            "picture": "[blade-110cc]-[R340].png"
+         },
+         "NHB25": {
+            "color-name": "Đen Vàng Đồng",
+            "price": "Chưa có giá",
+            "picture": "[blade-110cc]-[NHB25].png"
+         },
+         "NHB55": {
+            "color-name": "Đen Trắng",
+            "price": "Chưa có giá",
+            "picture": "[blade-110cc]-[NHB55].png"
+         },
+         "B189": {
+            "color-name": "Xanh Đen",
+            "price": "Chưa có giá",
+            "picture": "[blade-110cc]-[B189].png"
+         }
+      }
+   },
+   "wave-alpha-110cc": {
+      "spec": {
+         "Khối lượng bản thân": "97kg",
+         "Dài x Rộng x Cao": "1.914mm x 688mm x 1.075mm",
+         "Khoảng cách trục bánh xe": "1.224mm",
+         "Độ cao yên": "769mm",
+         "Khoảng sáng gầm xe": "142mm",
+         "Dung tích bình xăng": "3,7 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 70/90 - 17 M/C 38P ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ, giảm chấn thủy lực",
+         "Loại động cơ": "Xăng, 4 kỳ, 1 xi-lanh, làm mát bằng không khí",
+         "Dung tích xy-lanh": "109,1cm3",
+         "Đường kính x hành trình pít-tông": "50mm x 55,6mm",
+         "Tỉ số nén": "9,0:1",
+         "Công suất tối đa": "6,12kW/7.500 vòng/phút",
+         "Mô-men cực đại": "8,44Nm/6.000 vòng/phút",
+         "Dung tích nhớt máy": "1 lít khi rã máy/ 0,8 lít khi thay nhớt",
+         "Hộp số": "Cơ khí, 4 số tròn",
+         "Hệ thống khởi động": "Điện/ Đạp chân"
+      },
+      "data": {
+         "YR322": {
+            "color-name": "Cam",
+            "price": "Chưa có giá",
+            "picture": "[wave-alpha-110cc]-[YR322].png"
+         },
+         "NHB55": {
+            "color-name": "Trắng",
+            "price": "Chưa có giá",
+            "picture": "[wave-alpha-110cc]-[NHB55].png"
+         },
+         "R263": {
+            "color-name": "Đỏ",
+            "price": "Chưa có giá",
+            "picture": "[wave-alpha-110cc]-[R263].png"
+         },
+         "GY150": {
+            "color-name": "Xanh ngọc",
+            "price": "Chưa có giá",
+            "picture": "[wave-alpha-110cc]-[GY150].png"
+         },
+         "B203": {
+            "color-name": "Xanh",
+            "price": "Chưa có giá",
+            "picture": "[wave-alpha-110cc]-[B203].png"
+         },
+         "NHB25": {
+            "color-name": "Đen",
+            "price": "Chưa có giá",
+            "picture": "[wave-alpha-110cc]-[NHB25].png"
+         }
+      }
+   },
+   "wave-rsx-fi-110cc": {
+      "spec": {
+         "Khối lượng bản thân": "102kg (vành đúc), 99kg (vành nan)",
+         "Dài x Rộng x Cao": "1.919mm x 709mm x 1.080mm",
+         "Khoảng cách trục bánh xe": "1.227mm",
+         "Độ cao yên": "760mm",
+         "Khoảng sáng gầm xe": "135mm",
+         "Dung tích bình xăng": "4 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 70/90 - 17 M/C 38P ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ, giảm chấn thủy lực",
+         "Loại động cơ": "Xăng, 4 kỳ, 1 xi-lanh, làm mát bằng không khí",
+         "Dung tích xy-lanh": "109,1cm3",
+         "Đường kính x hành trình pít-tông": "50 mm x 55,6 mm",
+         "Tỉ số nén": "9,3:1",
+         "Công suất tối đa": "6,56 kW / 7.500 vòng/phút",
+         "Mô-men cực đại": "8,77 Nm/6.000 vòng/phút",
+         "Dung tích nhớt máy": "1 lít khi rã máy/ 0,8 lít khi thay nhớt",
+         "Hộp số": "Cơ khí, 4 số tròn",
+         "Hệ thống khởi động": "Điện/ Đạp chân"
+      },
+      "data": {
+         "B189": {
+            "color-name": "Xanh (Đen Xanh)",
+            "price": "Xám Đen (Đen Xám)",
+            "picture": "[wave-rsx-fi-110cc]-[B189].png"
+         },
+         "Đỏ (Đen Đỏ)": {
+            "color-name": "NHB83",
+            "price": "R340",
+            "picture": "[wave-rsx-fi-110cc]-[Đỏ (Đen Đỏ)].png"
+         },
+         "NHB55": {
+            "color-name": "Trắng (Đen Trắng)",
+            "price": "https://hondaxemay.com.vn/wp-content/uploads/2017/11/lineup550x400-copy-3_550x400_acf_cropped-3.png",
+            "picture": "[wave-rsx-fi-110cc]-[NHB55].png"
+         }
+      }
+   },
+   "msx-125cc": {
+      "spec": {
+         "Khối lượng bản thân": "104 kg",
+         "Khoảng cách trục bánh xe": "1.199mm",
+         "Dung tích bình xăng": "5,7 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 120/70-12 51L Không săm",
+         "Phuộc trước": "Giảm xóc hành trình ngược",
+         "Loại động cơ": "PGM-FI, 4 kỳ, 2 van, xy-lanh đơn, côn 4 số, làm mát bằng không khí",
+         "Đường kính x hành trình pít-tông": "52,4mm x 57,9mm",
+         "Tỉ số nén": "9,3:1",
+         "Công suất tối đa": "6,9 kW/7.000 vòng/phút",
+         "Mô-men cực đại": "10,6 Nm/5.500 vòng/phút",
+         "Dung tích nhớt máy": "0,9 lít khi thay dầu",
+         "Loại truyền động": "Côn tay 4 số",
+         "Hệ thống khởi động": "Điện"
+      },
+      "data": {
+         "B219": {
+            "color-name": "Xanh (da trời) đen",
+            "price": "49.990.000 VNĐ",
+            "picture": "[msx-125cc]-[B219].png"
+         },
+         "GY134": {
+            "color-name": "Xanh (lá cây) đen",
+            "price": "49.990.000 VNĐ",
+            "picture": "[msx-125cc]-[GY134].png"
+         },
+         "R310": {
+            "color-name": "Đỏ đen",
+            "price": "49.990.000 VNĐ",
+            "picture": "[msx-125cc]-[R310].png"
+         },
+         "YR345": {
+            "color-name": "Cam đen",
+            "price": "49.990.000 VNĐ",
+            "picture": "[msx-125cc]-[YR345].png"
+         }
+      }
+   },
+   "winner-150cc": {
+      "spec": {
+         "Khối lượng bản thân": "122kg",
+         "Dài x Rộng x Cao": "2.025 x 725 x 1.102 mm",
+         "Khoảng cách trục bánh xe": "1.276 mm",
+         "Độ cao yên": "780 mm",
+         "Khoảng sáng gầm xe": "167 mm",
+         "Dung tích bình xăng": "4,5 lít",
+         "Kích cỡ lốp trước/ sau": "Trước: 90/80-17M/C 46P ",
+         "Phuộc trước": "Ống lồng, giảm chấn thủy lực",
+         "Phuộc sau": "Lò xo trụ đơn",
+         "Loại động cơ": "PGM-FI, 4 kỳ, DOHC, xy-lanh đơn, côn 6 số, làm mát bằng dung dịch",
+         "Dung tích xy-lanh": "149,1 cm3",
+         "Đường kính x hành trình pít-tông": "57,3 x 57,8 mm",
+         "Tỉ số nén": "11,3:1",
+         "Công suất tối đa": "11,5kW/9.000 vòng/phút",
+         "Mô-men cực đại": "13,5Nm/6.500 vòng/phút",
+         "Dung tích nhớt máy": "1.1 lít khi thay nhớt",
+         "Hệ thống khởi động": "Điện/Đạp chân"
+      },
+      "data": {
+         "NHA76": {
+            "color-name": "Đen (Đen mờ)",
+            "price": "45.990.000 VNĐ",
+            "picture": "[winner-150cc]-[NHA76].png"
+         }
+      }
+   },
+   "gold-wing": {
+      "spec": {},
+      "data": {
+         "NHA76": {
+            "color-name": "Đen (Đen mờ)",
+            "price": "45.990.000 VNĐ",
+            "picture": "[gold-wing]-[NHA76].png"
+         }
+      }
+   },
+   "cbr1000rr-fireblade-fireblade-sp": {
+      "spec": {},
+      "data": {
+         "NHA76": {
+            "color-name": "Đen (Đen mờ)",
+            "price": "45.990.000 VNĐ",
+            "picture": "[cbr1000rr-fireblade-fireblade-sp]-[NHA76].png"
+         }
+      }
+   },
+   "cb1000r": {
+      "spec": {},
+      "data": {
+         "NHA76": {
+            "color-name": "Đen (Đen mờ)",
+            "price": "45.990.000 VNĐ",
+            "picture": "[cb1000r]-[NHA76].png"
+         }
+      }
+   },
+   "cbr650f": {
+      "spec": {},
+      "data": {
+         "NHA76": {
+            "color-name": "Đen (Đen mờ)",
+            "price": "45.990.000 VNĐ",
+            "picture": "[cbr650f]-[NHA76].png"
+         }
+      }
+   },
+   "cb650f": {
+      "spec": {},
+      "data": {
+         "NHA76": {
+            "color-name": "Đen (Đen mờ)",
+            "price": "45.990.000 VNĐ",
+            "picture": "[cb650f]-[NHA76].png"
+         }
+      }
+   },
+   "cb500x": {
+      "spec": {},
+      "data": {
+         "NHA76": {
+            "color-name": "Đen (Đen mờ)",
+            "price": "45.990.000 VNĐ",
+            "picture": "[cb500x]-[NHA76].png"
+         }
+      }
+   },
+   "cb500f": {
+      "spec": {},
+      "data": {
+         "NHA76": {
+            "color-name": "Đen (Đen mờ)",
+            "price": "45.990.000 VNĐ",
+            "picture": "[cb500f]-[NHA76].png"
+         }
+      }
+   },
+   "rebel-300-500": {
+      "spec": {},
+      "data": {
+         "NHA76": {
+            "color-name": "Đen (Đen mờ)",
+            "price": "45.990.000 VNĐ",
+            "picture": "[rebel-300-500]-[NHA76].png"
+         }
+      }
+   }
+}
