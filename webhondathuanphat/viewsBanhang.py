@@ -1,17 +1,17 @@
 from .pyFolder.baseMenu import BAN_HANG, webParam, WEB_DATA
+from .pyFolder.baseMenu import loadData
 from .pyFolder.navMenu import pageReturn
 import json
 
-JSON_FOLDER = 'webhondathuanphat\\jsonFolder\\'
-FILE_CATEROGY = JSON_FOLDER + 'dict_cat.json'
-FILE_MODEL = JSON_FOLDER + 'dict_Model.json'
-DATA = {'cate': None, 'model': None}
-NAME = 'name'
+
+CAT = 'caterogy'
+MOD = 'model'
+DATA = {CAT: None, MOD: None}
 COLOR = 'color-name'
 PRICE = 'price'
 PICTURE = 'picture'
 
-def loadData(is_Model=False):
+def loadData_OLD(is_Model=False):
     fileName = FILE_CATEROGY
     if is_Model:
         fileName = FILE_MODEL
@@ -22,15 +22,15 @@ def loadData(is_Model=False):
 
 
 def getData():
-    if DATA['model'] is None:
-        DATA['model'] = loadData(is_Model=True)
-    return DATA['model']
+    if DATA[MOD] is None:
+        DATA[MOD] = loadData(is_Model=True)
+    return DATA[MOD]
 
 
 def getCaterogy():
-    if DATA['cate'] is None:
-        DATA['cate'] = loadData(is_Model=False)
-    return DATA['cate']
+    if DATA[CAT] is None:
+        DATA[CAT] = loadData(is_Model=False)
+    return DATA[CAT]
 
 
 def loadModel(modelList):
@@ -40,7 +40,7 @@ def loadModel(modelList):
         singleOne = list(getData()[each]['data'].items())[0][1]
         #print(singleOne)
         result[each] = {
-                        NAME: each.upper(),
+                        'name': each.upper()[:10],
                         'color': singleOne[COLOR],
                         PRICE: singleOne[PRICE],
                         PICTURE:singleOne[PICTURE]
@@ -56,33 +56,19 @@ def theoLoaixe(request, loaiXe:int):
     cat = cat.replace('>','').replace("'",'')
     cat_dict = getCaterogy()
     result = None
-    #print('Caterogy: ', cat)
-    if cat == '1':
-        models = []
-        for eachKey in cat_dict.keys():
-            for eachModel in cat_dict[eachKey]:
-                models.append(eachModel)
-        result = models
-    else:
-        result = cat_dict[cat]
-    #print(result)
-    webParam[WEB_DATA] = loadModel(result)
+    webParam[WEB_DATA] = loadModel(cat_dict[cat]['list'])
     return pageReturn(request, BAN_HANG)
 
 
 def loadModel_Full(modelName):
-    result = {}
-    dataModel = getData()[modelName]
-    for eachKey in dataModel.keys():
-        if eachKey is dict:
-            for each in eachKey.keys():
-                result[each] = eachKey[each]
-        else:
-            result[eachKey] = dataModel[eachKey]
-    #print(result)
+    result = getData()[modelName]
+    result['number'] = range(len(result['data']))    
+    result['active'] = list(result['data'].items())[0][0]
+    #print(json.dumps(result, indent=4))
     return result
 
 
 def theoDoixe(request, doiXe:str):
     webParam[WEB_DATA] = loadModel_Full(doiXe)
+    #webParam[WEB_DATA] = getData()[doiXe]
     return pageReturn(request, BAN_HANG)

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .baseMenu import BAN_HANG, DICH_VU,THANH_VIEN, LOAI_XE, WEB_PARAM, LEFT, RIGHT, MENU_NAME, SUB_MENU
 from .baseMenu import webParam, getSubMenuList
 from ..models import ProductCaterogy as Caterogy
+from .baseMenu import loadData
 
 #Constant menu variables
 subMenuList = { DICH_VU[0]     : { 'henlichsuachua'    : 'Hẹn lịch sửa chữa',
@@ -11,7 +12,22 @@ subMenuList = { DICH_VU[0]     : { 'henlichsuachua'    : 'Hẹn lịch sửa ch�
                                  },
               }
 
+
 def createSubMenu_BANHANG():
+    if not BAN_HANG[0] in subMenuList.keys():
+        subMenu = {}
+        data = loadData()
+        for each in data.keys():
+            subMenu[each] = data[each]['name']
+            if webParam[LOAI_XE] is None:
+                webParam[LOAI_XE] = str(each)
+            else:
+                webParam[LOAI_XE] = webParam[LOAI_XE] + str(each)
+        subMenuList[BAN_HANG[0]] = subMenu
+    #print(subMenuList)
+
+
+def createSubMenu_BANHANG_OLD():
     if not BAN_HANG[0] in subMenuList.keys():
         subMenu = {}
         caterogyList = Caterogy.objects.all()
