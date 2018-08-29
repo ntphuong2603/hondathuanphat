@@ -18,22 +18,15 @@ def dangxuat(request):
 
 def dangky(request):
     if request.method == 'POST':
-        return thanhvien(request)
-    return pageReturn(request, THANH_VIEN)
-
-
-def kiemtraTendangnhap(request):
-    #print(request)
-    if request.method == "POST":
+        data = {'user' : 'NG'}
         usr = request.POST.get('usr')
-        data = {'user' : 'OK'}
-        try:
-            user = User.objects.get(username=usr)
-        except User.DoesNotExist:
-            data['user'] = 'NG'
-        finally:
-            #print(data)
-            return JsonResponse(data)
+        if not User.objects.filter(username=usr).exists():            
+            user = User(username=usr, email='')
+            user.set_password(request.POST.get('pwd'))
+            user.save()
+            data = {'user':'OK'}
+        return JsonResponse(data)
+    return pageReturn(request, THANH_VIEN)
 
 
 @login_required(login_url='dangnhap')

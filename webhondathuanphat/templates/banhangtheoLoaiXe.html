@@ -8,7 +8,7 @@
         <img class="card-img-top" src="{% static "images/Models/"%}{{value.picture}}"  alt="{{ value.picture }}">
         <div class="card-body">
           <h5 class="card-title">{{ value.name }}</h5>
-          <p class="card-text">Giá từ: {{ value.price }}</p>
+          <p class="card-text">{{ value.price }}</p>
           <a href="{% url 'theoDoixe' doiXe=key %}" class="btn btn-primary">Xem chi tiết</a>
         </div>
     </div>

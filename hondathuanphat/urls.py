@@ -18,5 +18,14 @@ from django.urls import path, include
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('', include('webhondathuanphat.urls'))
+    #path('', include('webhondathuanphat.urls')),
+    path('', include('webhondathuanphat.urls_0')),
+    path('banhang/', include('webhondathuanphat.urlsBanhang')),
+    path('dichvu/', include('webhondathuanphat.urlsDichvu')),
+    #path('phutung/', include('webhondathuanphat.urlsPhutung')),
+    #path('laixeAntoan/', include('webhondathuanphat.urlsLaixeAntoan')),
+    #path('tintuc/', include('webhondathuanphat.urlsTintuc')),
+    #path('tuyendung/', include('webhondathuanphat.urlsTuyendung')),
+    path('nhanvien/', include('webhondathuanphat.urlsNhanvien')),
+    path('thanhvien/', include('webhondathuanphat.urlsThanhvien')),
 ]

@@ -1,6 +1,7 @@
 from django.urls import path
 from django.conf.urls import url
-from . import views, viewsBanhang as banhang, viewsDichvu as dichvu, viewsThanhvien as thanhvien, viewsNhanvien as nhanvien
+from . import views
+from . import viewsBanhang as banhang, viewsDichvu as dichvu, viewsThanhvien as thanhvien, viewsNhanvien as nhanvien
 
 
 urlpatterns = [
@@ -29,7 +30,7 @@ urlpatterns = [
     url(r'^ajax/nhanvien/dangnhap$', views.nhanvienDangnhap),
     url(r'^ajax/capnhatthongtin$', views.thongtincanhan),
     url(r'^ajax/dangxuat$', views.dangxuat),
-	url(r'^ajax/thanhvien/kiemtraTendangnhap$', thanhvien.kiemtraTendangnhap),
+	#url(r'^ajax/thanhvien/kiemtraTendangnhap$', thanhvien.kiemtraTendangnhap),
 	url(r'^ajax/capnhatmatkhau$', thanhvien.capnhatmatkhau),
     #ajax functions for dichvu
     url(r'^ajax/dichvu/dangkyLichhen$', dichvu.henlichsuachua),

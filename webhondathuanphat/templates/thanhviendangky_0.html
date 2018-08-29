@@ -9,9 +9,33 @@
     <from id="signup_data">
         <div class="form-group">
           <label for="usr">Tên đăng nhập</label>
-          <input type="text" class="form-control" id="usr" aria-describedby="usrHelpBlock">
+          <input type="text" class="form-control" id="usr" aria-describedby="usrHelpBlock" value="ntphuong2603">
           <small class="text-muted"><span class="text-primary" id="usrHelpBlock">
-            Tên đăng nhập được gợi ý là số điện thoại cá nhân
+            Kiểm tra tên đăng nhập trước khi đăng ký.
+          </span></small>
+          <br/>
+          <input id="ketquaKiemtraTendangnhap" type="text" value="userNG" hidden>
+          <small class="text-muted"><span class="text-danger" id="usrInfo" style="display: block">
+          </span></small>
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-danger btn-block" id='btnKiemtra' onclick="kiemtraTendangnhap();">Kiểm tra tên đăng nhập</button>
+        </div>
+        <div class="form-group">
+          <label for="user">Xác nhận thành viên bằng</label>
+          <select id="mth_confirm" class="form-control" onchange="changeConfirmInput();">
+            <option selected value="phone">Tin nhắn điện thoại</option>
+            <option value="email">Thư điện tử (email)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" pattern="^[0-9]{5,}$" class="form-control" id="phone_confirm" placeholder="Chỉ nhập số điện thoại">
+          <small class="text-muted"><span class="text-danger" id="phoneError" style="display: none">
+            Số điện thoại nhập không phù hợp hoặc không đúng
+          </span></small>
+          <input type="email" style="display: none" class="form-control" id="email_confirm" placeholder="Nhập đúng địa chỉ email">
+          <small class="text-muted"><span class="text-danger" id="emailError" style="display: none">
+            Địa chỉ email nhập không phù hợp hoặc không đúng
           </span></small>
         </div>
         <div class="form-group">

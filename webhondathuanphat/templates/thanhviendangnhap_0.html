@@ -8,19 +8,19 @@
     </div>
     <from id="signin_data">
       <div class="form-group">
-        <label for="usr">Tên đăng nhập</label>
-        <input type="text" class="form-control" id="usr" value='0987083169'>
+        <label for="user">Tên đăng nhập</label>
+        <input type="user" class="form-control" id="usr">
         <small class="text-muted py-3"><span class="text-danger" style="display: none" id="usrError">
           Tên đăng nhập không được để trống
         </span></small>
       </div>
       <div class="form-group">
-        <label for="pwd">Mật khẩu đăng nhập</label>
-        <input type="password" class="form-control" id="pwd" value="1234567890">
+        <label for="pass">Mật khẩu đăng nhập</label>
+        <input type="password" class="form-control" id="pwd">
         <small class="text-muted py-3"><span class="text-danger" style="display: none" id="pwdError">
           Mật khẩu không được để trống
         </span></small>
-      </div>      
+      </div>
       <div class="form-check">
         <label class="form-option-label py-2 pull-right">
           <input class="form-check-input" type="checkbox" id="nhanvienCheck" value="False" onclick="changeLoginState(this.id);"> Nhân viên đăng nhập

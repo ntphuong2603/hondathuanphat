@@ -3,6 +3,7 @@ import datetime
 from .pyFolder.baseMenu import DICH_VU, webParam, WEB_DATA
 from .pyFolder.navMenu import pageReturn
 from .models import RepairBooking
+from .viewsBanhang import getModelList as modelList
 
 #Service view funtions
 def getData():
@@ -12,7 +13,7 @@ def getData():
     for i in range(10):
         today = datetime.date.today() + datetime.timedelta(days=i)
         todaylist.append(today.strftime("%d-%m-%Y"))
-    return todaylist
+    return todaylist, modelList
 
 
 def henlichsuachua(request):
@@ -32,5 +33,5 @@ def henlichsuachua(request):
             data['result'] = 'NG'
         return JsonResponse(data)
     else:
-        webParam['webData'] = getData()
+        webParam['webData'], webParam['modelList'] = getData()
         return pageReturn(request, DICH_VU)

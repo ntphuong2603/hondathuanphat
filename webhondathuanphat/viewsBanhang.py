@@ -7,7 +7,7 @@ import json
 CAT = 'caterogy'
 MOD = 'model'
 DATA = {CAT: None, MOD: None}
-COLOR = 'color-name'
+COLOR = 'colorName'
 PRICE = 'price'
 PICTURE = 'picture'
 
@@ -20,12 +20,17 @@ def loadData_OLD(is_Model=False):
     f.close()
     return dict_data
 
+def getModelList():
+    modelList = []
+    modelData = getData()
+    for eachKey in modelData.keys():
+        modelList.append(modelData[eachKey]['spec']['Tên sản phẩm'])
+    return sorted(modelList)
 
 def getData():
     if DATA[MOD] is None:
         DATA[MOD] = loadData(is_Model=True)
     return DATA[MOD]
-
 
 def getCaterogy():
     if DATA[CAT] is None:
@@ -42,7 +47,7 @@ def loadModel(modelList):
         result[each] = {
                         'name': each.upper()[:10],
                         'color': singleOne[COLOR],
-                        PRICE: singleOne[PRICE],
+                        PRICE: "Liên hệ để biết giá",
                         PICTURE:singleOne[PICTURE]
                        }
     #print(json.dumps(result, indent=3))
@@ -62,7 +67,7 @@ def theoLoaixe(request, loaiXe:int):
 
 def loadModel_Full(modelName):
     result = getData()[modelName]
-    result['number'] = range(len(result['data']))    
+    result['number'] = range(len(result['data']))
     result['active'] = list(result['data'].items())[0][0]
     #print(json.dumps(result, indent=4))
     return result

@@ -16,16 +16,16 @@
          "Mô-men cực đại": "25,5Nm/5.000 vòng/phút",
          "Dung tích nhớt máy": "Sau khi xả: 1,2 lít ",
          "Loại truyền động": "Biến thiên vô cấp",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "SH 300"
       },
       "data": {
          "CLR_0": {
-            "color-name": "Đỏ đen",
+            "colorName": "Đỏ đen",
             "price": "269.000.000 VNĐ",
             "picture": "[sh-300cc]-[CLR_0].png"
          },
          "CLR_1": {
-            "color-name": "Trắng đen",
+            "colorName": "Trắng đen",
             "price": "269.000.000 VNĐ",
             "picture": "[sh-300cc]-[CLR_1].png"
          }
@@ -51,16 +51,16 @@
          "Dung tích nhớt máy": "0,9 lít khi rã mãy/ 0,8 lít khi thay nhớt",
          "Loại truyền động": "Vô cấp, điều khiển tự động",
          "Hệ thống khởi động": "Điện",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "LEAD 125"
       },
       "data": {
          "NHB25": {
-            "color-name": "Đen",
+            "colorName": "Đen",
             "price": "37.490.000 VNĐ",
             "picture": "[lead-125cc]-[NHB25].png"
          },
          "R350": {
-            "color-name": "Đỏ (Đỏ Đen)",
+            "colorName": "Đỏ (Đỏ Đen)",
             "price": "37.490.000 VNĐ",
             "picture": "[lead-125cc]-[R350].png"
          }
@@ -86,26 +86,26 @@
          "Dung tích nhớt máy": "0,9 lít khi rã máy/ 0,8 lít khi thay nhớt",
          "Loại truyền động": "Dây đai, biến thiên vô cấp",
          "Hệ thống khởi động": "Điện",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "Air Blade 125"
       },
       "data": {
          "NHA62": {
-            "color-name": "Bạc Đen",
+            "colorName": "Bạc Đen",
             "price": "37.990.000 VNĐ",
             "picture": "[air-blade-125cc]-[NHA62].png"
          },
          "R340": {
-            "color-name": "Đỏ Đen",
+            "colorName": "Đỏ Đen",
             "price": "37.990.000 VNĐ",
             "picture": "[air-blade-125cc]-[R340].png"
          },
          "NHB35": {
-            "color-name": "Đen Trắng",
+            "colorName": "Đen Trắng",
             "price": "37.990.000 VNĐ",
             "picture": "[air-blade-125cc]-[NHB35].png"
          },
          "B189": {
-            "color-name": "Xanh Đen",
+            "colorName": "Xanh Đen",
             "price": "37.990.000 VNĐ",
             "picture": "[air-blade-125cc]-[B189].png"
          }
@@ -131,26 +131,26 @@
          "Dung tích nhớt máy": "0,9 lít khi rã máy/ 0,8 lít khi thay nhớt",
          "Loại truyền động": "Dây đai, biến thiên vô cấp",
          "Hệ thống khởi động": "Điện",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "PCS 125 150"
       },
       "data": {
          "NHB35": {
-            "color-name": "Trắng Đen",
+            "colorName": "Trắng Đen",
             "price": "56.490.000 VNĐ",
             "picture": "[pcx-125cc150cc]-[NHB35].png"
          },
          "NHB86": {
-            "color-name": "Bạc Đen",
+            "colorName": "Bạc Đen",
             "price": "56.490.000 VNĐ",
             "picture": "[pcx-125cc150cc]-[NHB86].png"
          },
          "NHB25": {
-            "color-name": "Đen",
+            "colorName": "Đen",
             "price": "56.490.000 VNĐ",
             "picture": "[pcx-125cc150cc]-[NHB25].png"
          },
          "R368": {
-            "color-name": "Đỏ",
+            "colorName": "Đỏ",
             "price": "56.490.000 VNĐ",
             "picture": "[pcx-125cc150cc]-[R368].png"
          }
@@ -176,21 +176,21 @@
          "Dung tích nhớt máy": "0,8 lít (thay dầu) ",
          "Loại truyền động": "Dây đai, biến thiên vô cấp",
          "Hệ thống khởi động": "Điện",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "SH Mode 125"
       },
       "data": {
          "NHB35": {
-            "color-name": "Trắng Sứ (Trắng đen)",
+            "colorName": "Trắng Sứ (Trắng đen)",
             "price": "52.490.000 VNĐ",
             "picture": "[sh-mode-125cc]-[NHB35].png"
          },
          "R350": {
-            "color-name": "Đỏ đậm (Đỏ đen)",
+            "colorName": "Đỏ đậm (Đỏ đen)",
             "price": "52.490.000 VNĐ",
             "picture": "[sh-mode-125cc]-[R350].png"
          },
          "NHB18": {
-            "color-name": "Bạc mờ (Bạc đen)",
+            "colorName": "Bạc mờ (Bạc đen)",
             "price": "52.490.000 VNĐ",
             "picture": "[sh-mode-125cc]-[NHB18].png"
          }
@@ -216,36 +216,36 @@
          "Dung tích nhớt máy": "0,8 lít khi rã máy/0,7 lít khi thay nhớt",
          "Loại truyền động": "Tự động, biến thiên vô cấp",
          "Hệ thống khởi động": "Điện",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "Vision 110"
       },
       "data": {
          "CLR_2": {
-            "color-name": "Xanh (Xanh nâu)",
+            "colorName": "Xanh (Xanh nâu)",
             "price": "29.990.000 VNĐ",
             "picture": "[vision-110cc]-[CLR_2].png"
          },
          "CLR_3": {
-            "color-name": "Đỏ (Đỏ nâu)",
+            "colorName": "Đỏ (Đỏ nâu)",
             "price": "29.990.000 VNĐ",
             "picture": "[vision-110cc]-[CLR_3].png"
          },
          "CLR_4": {
-            "color-name": "Trắng ngà (Vàng nhạt nâu)",
+            "colorName": "Trắng ngà (Vàng nhạt nâu)",
             "price": "29.990.000 VNĐ",
             "picture": "[vision-110cc]-[CLR_4].png"
          },
          "CLR_5": {
-            "color-name": "Đỏ đậm (Đỏ đen)",
+            "colorName": "Đỏ đậm (Đỏ đen)",
             "price": "29.990.000 VNĐ",
             "picture": "[vision-110cc]-[CLR_5].png"
          },
          "CLR_6": {
-            "color-name": "Hồng (Hồng nâu)",
+            "colorName": "Hồng (Hồng nâu)",
             "price": "29.990.000 VNĐ",
             "picture": "[vision-110cc]-[CLR_6].png"
          },
          "CLR_7": {
-            "color-name": "Trắng (Trắng nâu)",
+            "colorName": "Trắng (Trắng nâu)",
             "price": "29.990.000 VNĐ",
             "picture": "[vision-110cc]-[CLR_7].png"
          }
@@ -271,36 +271,36 @@
          "Dung tích nhớt máy": "0,9 lít khi rã máy ",
          "Hộp số": "Vô cấp, điều khiển tự động",
          "Hệ thống khởi động": "Điện",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "SH 125 150"
       },
       "data": {
          "CLR_8": {
-            "color-name": "Đen",
+            "colorName": "Đen",
             "price": "89.990.000 VNĐ",
             "picture": "[sh-125-150cc]-[CLR_8].png"
          },
          "CLR_9": {
-            "color-name": "Đỏ",
+            "colorName": "Đỏ",
             "price": "89.990.000 VNĐ",
             "picture": "[sh-125-150cc]-[CLR_9].png"
          },
          "CLR_10": {
-            "color-name": "Trắng",
+            "colorName": "Trắng",
             "price": "89.990.000 VNĐ",
             "picture": "[sh-125-150cc]-[CLR_10].png"
          },
          "CLR_11": {
-            "color-name": "Bạc",
+            "colorName": "Bạc",
             "price": "89.990.000 VNĐ",
             "picture": "[sh-125-150cc]-[CLR_11].png"
          },
          "CLR_12": {
-            "color-name": "Xanh Lục - Đen",
+            "colorName": "Xanh Lục - Đen",
             "price": "89.990.000 VNĐ",
             "picture": "[sh-125-150cc]-[CLR_12].png"
          },
          "CLR_13": {
-            "color-name": "Xanh Lam - Đen",
+            "colorName": "Xanh Lam - Đen",
             "price": "89.990.000 VNĐ",
             "picture": "[sh-125-150cc]-[CLR_13].png"
          }
@@ -326,21 +326,21 @@
          "Dung tích nhớt máy": "0,9 lít (rã máy)",
          "Loại truyền động": "4 số tròn",
          "Hệ thống khởi động": "Điện & Đạp chân",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "Future 125"
       },
       "data": {
          "NHA62": {
-            "color-name": "Bạc đen",
+            "colorName": "Bạc đen",
             "price": "30.190.000 VNĐ",
             "picture": "[future-125cc]-[NHA62].png"
          },
          "NHB25": {
-            "color-name": "Đen đỏ",
+            "colorName": "Đen đỏ",
             "price": "30.190.000 VNĐ",
             "picture": "[future-125cc]-[NHB25].png"
          },
          "R340": {
-            "color-name": "Đỏ đen",
+            "colorName": "Đỏ đen",
             "price": "30.190.000 VNĐ",
             "picture": "[future-125cc]-[R340].png"
          }
@@ -366,31 +366,31 @@
          "Dung tích nhớt máy": "1 lít khi rã máy/ 0,8 lít khi thay nhớt",
          "Hộp số": "Cơ khí, 4 số tròn",
          "Hệ thống khởi động": "Điện/ Đạp chân",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "Blade 110"
       },
       "data": {
          "R263": {
-            "color-name": "Đỏ Đen Trắng",
+            "colorName": "Đỏ Đen Trắng",
             "price": "Chưa có giá",
             "picture": "[blade-110cc]-[R263].png"
          },
          "R340": {
-            "color-name": "Đỏ Đen",
+            "colorName": "Đỏ Đen",
             "price": "Chưa có giá",
             "picture": "[blade-110cc]-[R340].png"
          },
          "NHB25": {
-            "color-name": "Đen Vàng Đồng",
+            "colorName": "Đen Vàng Đồng",
             "price": "Chưa có giá",
             "picture": "[blade-110cc]-[NHB25].png"
          },
          "NHB55": {
-            "color-name": "Đen Trắng",
+            "colorName": "Đen Trắng",
             "price": "Chưa có giá",
             "picture": "[blade-110cc]-[NHB55].png"
          },
          "B189": {
-            "color-name": "Xanh Đen",
+            "colorName": "Xanh Đen",
             "price": "Chưa có giá",
             "picture": "[blade-110cc]-[B189].png"
          }
@@ -416,36 +416,36 @@
          "Dung tích nhớt máy": "1 lít khi rã máy/ 0,8 lít khi thay nhớt",
          "Hộp số": "Cơ khí, 4 số tròn",
          "Hệ thống khởi động": "Điện/ Đạp chân",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "Wave Alpha 110"
       },
       "data": {
          "YR322": {
-            "color-name": "Cam",
+            "colorName": "Cam",
             "price": "Chưa có giá",
             "picture": "[wave-alpha-110cc]-[YR322].png"
          },
          "NHB55": {
-            "color-name": "Trắng",
+            "colorName": "Trắng",
             "price": "Chưa có giá",
             "picture": "[wave-alpha-110cc]-[NHB55].png"
          },
          "R263": {
-            "color-name": "Đỏ",
+            "colorName": "Đỏ",
             "price": "Chưa có giá",
             "picture": "[wave-alpha-110cc]-[R263].png"
          },
          "GY150": {
-            "color-name": "Xanh ngọc",
+            "colorName": "Xanh ngọc",
             "price": "Chưa có giá",
             "picture": "[wave-alpha-110cc]-[GY150].png"
          },
          "B203": {
-            "color-name": "Xanh",
+            "colorName": "Xanh",
             "price": "Chưa có giá",
             "picture": "[wave-alpha-110cc]-[B203].png"
          },
          "NHB25": {
-            "color-name": "Đen",
+            "colorName": "Đen",
             "price": "Chưa có giá",
             "picture": "[wave-alpha-110cc]-[NHB25].png"
          }
@@ -471,26 +471,26 @@
          "Dung tích nhớt máy": "1 lít khi rã máy/ 0,8 lít khi thay nhớt",
          "Hộp số": "Cơ khí, 4 số tròn",
          "Hệ thống khởi động": "Điện/ Đạp chân",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "Wave RSX FI 110"
       },
       "data": {
          "B189": {
-            "color-name": "Xanh (Đen Xanh)",
+            "colorName": "Xanh (Đen Xanh)",
             "price": "Chưa có giá",
             "picture": "[wave-rsx-fi-110cc]-[B189].png"
          },
          "NHB83": {
-            "color-name": "Xám Đen (Đen Xám)",
+            "colorName": "Xám Đen (Đen Xám)",
             "price": "Chưa có giá",
             "picture": "[wave-rsx-fi-110cc]-[NHB83].png"
          },
          "R340": {
-            "color-name": "Đỏ (Đen Đỏ)",
+            "colorName": "Đỏ (Đen Đỏ)",
             "price": "Chưa có giá",
             "picture": "[wave-rsx-fi-110cc]-[R340].png"
          },
          "NHB55": {
-            "color-name": "Trắng (Đen Trắng)",
+            "colorName": "Trắng (Đen Trắng)",
             "price": "Chưa có giá",
             "picture": "[wave-rsx-fi-110cc]-[NHB55].png"
          }
@@ -511,26 +511,26 @@
          "Dung tích nhớt máy": "0,9 lít khi thay dầu",
          "Loại truyền động": "Côn tay 4 số",
          "Hệ thống khởi động": "Điện",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "MSX 125"
       },
       "data": {
          "B219": {
-            "color-name": "Xanh (da trời) đen",
+            "colorName": "Xanh (da trời) đen",
             "price": "49.990.000 VNĐ",
             "picture": "[msx-125cc]-[B219].png"
          },
          "GY134": {
-            "color-name": "Xanh (lá cây) đen",
+            "colorName": "Xanh (lá cây) đen",
             "price": "49.990.000 VNĐ",
             "picture": "[msx-125cc]-[GY134].png"
          },
          "R310": {
-            "color-name": "Đỏ đen",
+            "colorName": "Đỏ đen",
             "price": "49.990.000 VNĐ",
             "picture": "[msx-125cc]-[R310].png"
          },
          "YR345": {
-            "color-name": "Cam đen",
+            "colorName": "Cam đen",
             "price": "49.990.000 VNĐ",
             "picture": "[msx-125cc]-[YR345].png"
          }
@@ -555,11 +555,11 @@
          "Mô-men cực đại": "13,5Nm/6.500 vòng/phút",
          "Dung tích nhớt máy": "1.1 lít khi thay nhớt",
          "Hệ thống khởi động": "Điện/Đạp chân",
-         "Tên sản phẩm": "Tên sản phẩm"
+         "Tên sản phẩm": "Winner 150"
       },
       "data": {
          "NHA76": {
-            "color-name": "Đen (Đen mờ)",
+            "colorName": "Đen (Đen mờ)",
             "price": "45.990.000 VNĐ",
             "picture": "[winner-150cc]-[NHA76].png"
          }
@@ -567,7 +567,7 @@
    },
    "cbr1000rr-fireblade-sp-1": {
       "spec": {
-         "Tên sản phẩm": " CBR1000RR Fireblade SP",
+         "Tên sản phẩm": " CBR 1000 Fireblade SP1",
          "Trọng lượng bản thân": " 195kg",
          "Dài x rộng x cao": " 2,065mm x 720mm x 1,125mm",
          "Khoảng cách trục bánh xe": " 1,405mm",
@@ -593,7 +593,7 @@
       },
       "data": {
          "CLR": {
-            "color-name": "Màu chủ yếu",
+            "colorName": "Màu chủ yếu",
             "price": "678.000.000 VNĐ",
             "picture": "[cbr1000rr-fireblade-sp-1]-[CLR].png"
          }
@@ -601,7 +601,7 @@
    },
    "cb-1000r-6": {
       "spec": {
-         "Tên sản phẩm": " CB1000R",
+         "Tên sản phẩm": "CB 1000R",
          "Trọng lượng bản thân": " 212kg",
          "Dài x rộng x cao": " 2,120mm x 789mm x 1,090mm",
          "Khoảng cách trục bánh xe": " 1,455mm",
@@ -627,17 +627,17 @@
       },
       "data": {
          "R381": {
-            "color-name": "Đỏ Đen Bạc ",
+            "colorName": "Đỏ Đen Bạc ",
             "price": "468.000.000 VNĐ",
             "picture": "[cb-1000r-6]-[R381].png"
          },
          "NH389": {
-            "color-name": "Xám Đen Bạc",
+            "colorName": "Xám Đen Bạc",
             "price": "468.000.000 VNĐ",
             "picture": "[cb-1000r-6]-[NH389].png"
          },
          "NHB01": {
-            "color-name": "Đen Bạc",
+            "colorName": "Đen Bạc",
             "price": "468.000.000 VNĐ",
             "picture": "[cb-1000r-6]-[NHB01].png"
          }
@@ -645,7 +645,7 @@
    },
    "cb-500x-8": {
       "spec": {
-         "Tên sản phẩm": " CB500X",
+         "Tên sản phẩm": "CB 500X",
          "Trọng lượng bản thân": " 195kg",
          "Dài x rộng x cao": " 2,095mm x 830mm x 1,360mm",
          "Khoảng cách trục bánh xe": " 1,420mm",
@@ -671,12 +671,12 @@
       },
       "data": {
          "R381": {
-            "color-name": " Đỏ đen",
+            "colorName": "Đỏ đen",
             "price": "180.000.000 VNĐ",
             "picture": "[cb-500x-8]-[R381].png"
          },
          "NH436": {
-            "color-name": "Đen ",
+            "colorName": "Đen",
             "price": "180.000.000 VNĐ",
             "picture": "[cb-500x-8]-[NH436].png"
          }
@@ -684,7 +684,7 @@
    },
    "rebel-9": {
       "spec": {
-         "Tên sản phẩm": " Rebel 500",
+         "Tên sản phẩm": "Rebel 500",
          "Trọng lượng bản thân": " 190kg",
          "Dài x rộng x cao": " 2,190mm x 820mm x1,090mm",
          "Khoảng cách trục bánh xe": " 1,490mm",
@@ -710,17 +710,17 @@
       },
       "data": {
          "NHB01": {
-            "color-name": "Đen ",
+            "colorName": "Đen",
             "price": "180.000.000 VNĐ",
             "picture": "[rebel-9]-[NHB01].png"
          },
          "R263": {
-            "color-name": "Đen Đỏ ",
+            "colorName": "Đen Đỏ",
             "price": "180.000.000 VNĐ",
             "picture": "[rebel-9]-[R263].png"
          },
          "NHB89": {
-            "color-name": "Bạc Đen ",
+            "colorName": "Bạc Đen",
             "price": "180.000.000 VNĐ",
             "picture": "[rebel-9]-[NHB89].png"
          }
@@ -728,7 +728,7 @@
    },
    "gold-wing-5": {
       "spec": {
-         "Tên sản phẩm": " Gold Wing",
+         "Tên sản phẩm": "Gold Wing",
          "Trọng lượng bản thân": " 383kg",
          "Dài x rộng x cao": " 2,575mm x 905mm x 1,555mm",
          "Khoảng cách trục bánh xe": " 1,695mm",
@@ -754,12 +754,12 @@
       },
       "data": {
          "R367B": {
-            "color-name": "Đỏ Đen Bạc ",
+            "colorName": "Đỏ Đen Bạc ",
             "price": "1.200.000.000 VNĐ",
             "picture": "[gold-wing-5]-[R367B].png"
          },
          "NH463": {
-            "color-name": "Đen Bạc ",
+            "colorName": "Đen Bạc ",
             "price": "1.200.000.000 VNĐ",
             "picture": "[gold-wing-5]-[NH463].png"
          }
@@ -767,7 +767,7 @@
    },
    "cbr1000rr-fireblade-2": {
       "spec": {
-         "Tên sản phẩm": " CBR1000RR Fireblade",
+         "Tên sản phẩm": "CBR 1000 Fireblade SP2",
          "Trọng lượng bản thân": " 196kg",
          "Dài x rộng x cao": " 2,065mm x 720mm x 1,125mm",
          "Khoảng cách trục bánh xe": " 1,405mm",
@@ -792,12 +792,12 @@
       },
       "data": {
          "R380": {
-            "color-name": "Đỏ Đen",
+            "colorName": "Đỏ Đen",
             "price": "560.000.000 VNĐ",
             "picture": "[cbr1000rr-fireblade-2]-[R380].png"
          },
          "NHA86": {
-            "color-name": "Đen",
+            "colorName": "Đen",
             "price": "560.000.000 VNĐ",
             "picture": "[cbr1000rr-fireblade-2]-[NHA86].png"
          }
@@ -805,7 +805,7 @@
    },
    "cbr-650f-7": {
       "spec": {
-         "Tên sản phẩm": " CBR650F",
+         "Tên sản phẩm": "CBR 650F 7",
          "Trọng lượng bản thân": " 213kg",
          "Dài x rộng x cao": " 2,110mm x 755mm x 1,145mm",
          "Khoảng cách trục bánh xe": " 1,450mm",
@@ -831,12 +831,12 @@
       },
       "data": {
          "NH436": {
-            "color-name": "Đen mờ ",
+            "colorName": "Đen mờ ",
             "price": "233.900.000 VNĐ",
             "picture": "[cbr-650f-7]-[NH436].png"
          },
          "R380": {
-            "color-name": "Đỏ đen ",
+            "colorName": "Đỏ đen ",
             "price": "233.900.000 VNĐ",
             "picture": "[cbr-650f-7]-[R380].png"
          }
@@ -844,7 +844,7 @@
    },
    "cb-650f-4": {
       "spec": {
-         "Tên sản phẩm": " CB650F",
+         "Tên sản phẩm": "CB 650F 4",
          "Trọng lượng bản thân": " 208kg",
          "Dài x rộng x cao": " 2,110mm x 780mm x 1,075mm",
          "Khoảng cách trục bánh xe": " 1,450mm",
@@ -870,17 +870,17 @@
       },
       "data": {
          "NH436": {
-            "color-name": "Đen mờ ",
+            "colorName": "Đen mờ ",
             "price": "225.900.000 VNĐ",
             "picture": "[cb-650f-4]-[NH436].png"
          },
          "R381": {
-            "color-name": "Đỏ Đen Bạc ",
+            "colorName": "Đỏ Đen Bạc ",
             "price": "225.900.000 VNĐ",
             "picture": "[cb-650f-4]-[R381].png"
          },
          "NHA96": {
-            "color-name": "Đen mờ ",
+            "colorName": "Đen mờ ",
             "price": "225.900.000 VNĐ",
             "picture": "[cb-650f-4]-[NHA96].png"
          }
@@ -888,7 +888,7 @@
    },
    "cb-500f-3": {
       "spec": {
-         "Tên sản phẩm": " CB500F",
+         "Tên sản phẩm": "CB 500F 3",
          "Trọng lượng bản thân": " 191kg",
          "Dài x rộng x cao": " 2,080mm x 790mm x 1,060mm",
          "Khoảng cách trục bánh xe": " 1,410mm",
@@ -914,12 +914,12 @@
       },
       "data": {
          "R381": {
-            "color-name": "Đen",
+            "colorName": "Đen",
             "price": "172.000.000 VNĐ",
             "picture": "[cb-500f-3]-[R381].png"
          },
          "B189": {
-            "color-name": "Xanh đen",
+            "colorName": "Xanh đen",
             "price": "172.000.000 VNĐ",
             "picture": "[cb-500f-3]-[B189].png"
          }

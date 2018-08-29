@@ -26,10 +26,12 @@
       <div class="form-group row">
         <label for="modelName" class="col-sm-3">Loại xe</label>
         <div class="col-sm-9">
-          <input id="modelName" class="form-control" placeholder="Nhập loại xe cần sữa chửa như: Air Blade, Winner, ...">
-          <small class="text-muted"><span class="text-danger" id="errormodelName" style="display: none">
-            Loại xe cần sửa chữa chưa được nhập
-          </span></small>
+          <select class="form-control" id="doixe">
+            <option disabled selected value="">Chọn loại xe cần sữa chửa</option>
+            {% for eachModel in webParam.modelList %}
+            <option value="{{ eachModel }}">{{ eachModel }}</option>
+            {% endfor %}
+          </select>
         </div>
       </div>
       <div class="form-group row">
