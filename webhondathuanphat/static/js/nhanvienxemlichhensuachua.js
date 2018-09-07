@@ -1,48 +1,23 @@
-function changeInfo(checkbox_ID){
-  checkbox_ID = '#' + checkbox_ID;
-  var id_pos = checkbox_ID.indexOf('_', 0) + 1;
-  var id = checkbox_ID.substr(0,id_pos);
-  var info_ID = id + 'changeInfo';
-  //if ($(checkbox_ID).checked == true){
-  //console.log($(checkbox_ID).val());
-  if ($(checkbox_ID).val()=='False'){
-    $(info_ID).html('Đã xác nhận');
-    $(checkbox_ID).val('True');
-    //alert('Đã xác nhận');
-  } else {
-    $(info_ID).html('Chưa xác nhận');
-    $(checkbox_ID).val('False');
-    //alert('CHUA');
+function showBooking(){
+  var select = $('#bookingType').val();
+  var ajaxString = '/ajax/nhanvien/showBooking_notConfirm';
+  if (select == 0){
+    ajaxString = '/ajax/nhanvien/showBooking_all';
+  } else if (select == 2) {
+    ajaxString = '/ajax/nhanvien/showBooking_confirmed';
   }
-  //console.log($(checkbox_ID).val());
-  //console.log(info_ID);
-}
-
-function showDetail(detailID) {
-    var modalID = '#' + detailID + "_detail";
-    $(modalID).modal('show');
-    //alert(detailID + modalID);
-}
-
-function updateStatus(booking_id){
-  var id_pos = booking_id.indexOf('_', 0);
-  var id = booking_id.substr(0,id_pos);
-  var confirm_ID = '#' + id + '_checkConfirm';
-  //console.log(id_pos);
-  //console.log(id);
+  console.log(ajaxString);
   $.ajax({
-    url : '/ajax/nhanvien/changeBookingStatus',
-    data: {
-      'id': id,
-      'confirm': $(confirm_ID).val()
-    },
+    url : ajaxString,
     type : 'POST',
     beforeSend:function(xhr, settings){
       xhr.setRequestHeader('X-CSRFToken', $('input[name=csrfmiddlewaretoken]').val());
+      $('#btnShowBook').html('Đang lấy dữ liệu ...');
     },
     success : function(data){
-      alert('Đã cập nhật xong');
-      $('#' + id + "_all").hide();
+      console.log(data);
+      $('#tableBodyData').html(data);
+      $('#btnShowBook').html('Hiển thị');
     },
     error: function(data){
       alert('Something wrong, please contact webadmin!')

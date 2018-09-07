@@ -1,3 +1,4 @@
+from django.shortcuts import render_to_response
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -11,11 +12,8 @@ from .pyFolder.navMenu import pageReturn
 def xemlichhensuachua(request):
     result = []
     all_booking = RepairBooking.objects.all().filter(confirm=False)
-    #print(all_booking)
-    #for eachIterator in list(RepairBooking.objects.all().values()):
     for eachIterator in list(all_booking.values()):
         result.append(eachIterator)
-    #print(result)
     webParam[WEB_DATA] = result
     return pageReturn(request, DICH_VU)
 
@@ -34,3 +32,27 @@ def thaydoiTrangthaiBooking(request):
         booking.confirm = request.POST.get('confirm')
         booking.save()
         return JsonResponse(data)
+
+def getBooking(confirmStatus=None):
+    if (confirmStatus is None):
+        all_booking = RepairBooking.objects.all()
+    else:
+        all_booking = RepairBooking.objects.all().filter(confirm=confirmStatus)
+    result = {}
+    for eachIterator in list(all_booking.values()):
+        #print(eachIterator)
+        result[eachIterator['id']]=eachIterator
+    return render_to_response('table_0.html', {'result': result})
+    #return JsonResponse()
+
+@login_required(login_url='dangnhap')
+def showBooking_all(request):
+    return getBooking()
+
+@login_required(login_url='dangnhap')
+def showBooking_notConfirm(request):
+    return getBooking(False)
+
+@login_required(login_url='dangnhap')
+def showBooking_confirmed(request):
+    return getBooking(True)

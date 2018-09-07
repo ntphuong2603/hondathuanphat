@@ -86,8 +86,8 @@ DATABASES = {
         'NAME' : 'ntphuong2603$dbthuanphatTest',
         'USER' : 'ntphuong2603',
         'PASSWORD' : 'dbthuanphat',
-        'HOST' : 'ntphuong2603.mysql.pythonanywhere-services.com',
-        #'HOST' : '127.0.0.1',
+        #'HOST' : 'ntphuong2603.mysql.pythonanywhere-services.com',
+        'HOST' : '127.0.0.1',
     }
 }
 

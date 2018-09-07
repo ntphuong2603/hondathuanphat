@@ -7,5 +7,5 @@ urlpatterns = [
 	path('phutung', views.phutung, name='phutung'),
 	path('laixeantoan', views.laixeantoan, name='laixeantoan'),
 	path('tintuc', views.tintuc, name='tintuc'),
-	path('tuyendung', views.tuyendung, name='tuyendung'),
+	path('tuyendung', views.tuyendung, name='tuyendung'),    
 ]

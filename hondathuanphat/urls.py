@@ -20,6 +20,7 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     #path('', include('webhondathuanphat.urls')),
     path('', include('webhondathuanphat.urls_0')),
+    path('', include('webhondathuanphat.urlsAjaxFunction')),
     path('banhang/', include('webhondathuanphat.urlsBanhang')),
     path('dichvu/', include('webhondathuanphat.urlsDichvu')),
     #path('phutung/', include('webhondathuanphat.urlsPhutung')),

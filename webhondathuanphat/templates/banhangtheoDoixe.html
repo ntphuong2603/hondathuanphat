@@ -1,127 +1,28 @@
 {% extends "bieumau.html" %}
 {% block content %}
-  <style>
-  .img-zoom-container {
-    position: relative;
-  }
-  .img-zoom-lens {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    /*set the size of the lens:*/
-    width: 50px;
-    height: 50px;
-  }
-
-  .img-zoom-result {
-    border: 1px solid #d4d4d4;
-    /*set the size of the result div:*/
-    width: 300px;
-    height: 300px;
-  }
-  </style>
   <script type="text/javascript">
-    var colorList = []; zoom = 3;
-    function updatePicture(colorCode){
-      if (colorList.length == 0)  {
-        $('button[id^=colorCode_]').each(function(){
-          var btn_name = $(this).attr('id');
-          var post = btn_name.indexOf('_');
-          colorList.push(btn_name.substr(post+1, btn_name.length - post));
-        });
-      }
-      for (i=0; i < colorList.length; i++){
-        if (colorCode.indexOf(colorList[i]) > 0){
-          $('#pict_' + colorList[i]).show();
-        } else {
-          $('#pict_' + colorList[i]).hide();
+    var colorList = []; alreadyShow = false;
+    function loadColorCode(){
+      $('button[id^=colorCode_]').each(function(){
+        var btn_name = $(this).attr('id');
+        var post = btn_name.indexOf('_');
+        colorList.push(btn_name.substr(post+1, btn_name.length - post));
+      });
+    }
+    function getColorCode(pictureID){
+      for (i=0; i<colorList.length; i++){
+        if (pictureID.indexOf(colorList[i])>0){
+          return colorList[i];
         }
       }
     }
-    function zoomInPicture(event, result){
-
-    }
-    function zoomIn(pictId){
-      var pict, zoom, cx, cy;
-      pict = $(pictId);
-      for (i=0; i < colorList.length; i++){
-        if (pictId.indexOf(colorList[i]) > 0){
-          zoom = $('#zoom_' + colorList[i]);
-        } else {
-          $('#zoom_' + colorList[i]).hide();
-        }
+    function processPicture(pictureID){
+      if (colorList.length == 0)  { loadColorCode();}
+      for (i=0; i<colorList.length; i++){
+        $('#pict_' + colorList[i]).hide();
       }
-      zoom.show();
-      pict.mousemove(zoomInPicture(event, zooom));
-    }
-    function hidePicture(pictureId){
-      for (i=0; i < colorList.length; i++){
-        $('#zoom_' + colorList[i]).hide();
-      }
-    }
-
-    function imageZoom(imgID) {
-      var img, lens, result, cx, cy;
-      for (i=0; i < colorList.length; i++){
-        if (imgID.indexOf(colorList[i]) > 0){
-          img = $('#pict_' + colorList[i]);
-          result = $('#zoom_' + colorList[i]);
-        } else {
-          $('#zoom_' + colorList[i]).hide();
-        }
-      }
-      console.log(img, result);
-      result.show();
-      /*create lens:*/
-      lens = document.createElement("DIV");
-      lens.setAttribute("class", "img-zoom-lens");
-      /*insert lens:*/
-      img.parentElement.insertBefore(lens, img);
-      /*calculate the ratio between result DIV and lens:*/
-      cx = result.offsetWidth / lens.offsetWidth;
-      cy = result.offsetHeight / lens.offsetHeight;
-      /*set background properties for the result DIV:*/
-      result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
-      /*execute a function when someone moves the cursor over the image, or the lens:*/
-      lens.addEventListener("mousemove", moveLens);
-      img.addEventListener("mousemove", moveLens);
-      /*and also for touch screens:*/
-      lens.addEventListener("touchmove", moveLens);
-      img.addEventListener("touchmove", moveLens);
-
-      function moveLens(e) {
-        var pos, x, y;
-        /*prevent any other actions that may occur when moving over the image:*/
-        e.preventDefault();
-        /*get the cursor's x and y positions:*/
-        pos = getCursorPos(e);
-        /*calculate the position of the lens:*/
-        x = pos.x - (lens.offsetWidth / 2);
-        y = pos.y - (lens.offsetHeight / 2);
-        /*prevent the lens from being positioned outside the image:*/
-        if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
-        if (x < 0) {x = 0;}
-        if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
-        if (y < 0) {y = 0;}
-        /*set the position of the lens:*/
-        lens.style.left = x + "px";
-        lens.style.top = y + "px";
-        /*display what the lens "sees":*/
-        result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
-      }
-
-      function getCursorPos(e) {
-        var a, x = 0, y = 0;
-        e = e || window.event;
-        /*get the x and y positions of the image:*/
-        a = img.getBoundingClientRect();
-        /*calculate the cursor's x and y coordinates, relative to the image:*/
-        x = e.pageX - a.left;
-        y = e.pageY - a.top;
-        /*consider any page scrolling:*/
-        x = x - window.pageXOffset;
-        y = y - window.pageYOffset;
-        return {x : x, y : y};
-      }
+      console.log(pictureID);
+      $('#pict_' + getColorCode(pictureID)).show();
     }
   </script>
   {% load static %}
@@ -130,25 +31,20 @@
       <span class="myHeader"><p class="text-xl-left py-2">
   				<strong><h3>Màu xe
             {% for key, value in webParam.webData.data.items %}
-            <button type="button" class="btn btn-outline-danger btn-sm" id="colorCode_{{key}}" onmouseover="updatePicture(this.id);" onclick="updatePicture(this.id);">{{ value.colorName }}</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" id="colorCode_{{key}}" onmouseover="processPicture(this.id);" onclick="showPicture(this.id);" onmouseout="processPicture(this.id);">{{ value.colorName }}</button>
             {% endfor %}
           </h3></strong>
       </p></span>
-      <div class="img-zoom-container">
       {% for key, value in webParam.webData.data.items %}
-          <img class="card-img-top" style="display: None" src="{% static "images/Models/"%}{{value.picture}}" id="pict_{{ key }}" onmouseover="imageZoom(this.id)";>
+      <img class="card-img-top" style="display: None" src="{% static "images/Models/"%}{{value.picture}}" id="pict_{{key}}">
       {% endfor %}
-      </div>
     </div>
-    <div class="col-sm-7">
+      <div class="col-sm-7">
       <span class="myHeader">
   			<p class="text-xl-left py-2">
   				<strong><h3>Thông số kỹ thuật</h3></strong>
   			</p>
   		</span>
-      {% for key, value in webParam.webData.data.items %}
-      <img style="display: None" src="{% static "images/Models/"%}{{value.picture}}"  id="zoom_{{ key }}">
-      {% endfor %}
       <table class="table table-striped table-bordered table-hover table-sm">
         <tbody>
           {% for key, value in webParam.webData.spec.items %}

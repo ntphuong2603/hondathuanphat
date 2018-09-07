@@ -26,7 +26,7 @@
       <div class="form-group row">
         <label for="modelName" class="col-sm-3">Loại xe</label>
         <div class="col-sm-9">
-          <select class="form-control" id="doixe">
+          <select class="form-control" id="modelName">
             <option disabled selected value="">Chọn loại xe cần sữa chửa</option>
             {% for eachModel in webParam.modelList %}
             <option value="{{ eachModel }}">{{ eachModel }}</option>
@@ -85,7 +85,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <button type="button" class="btn btn-primary btn-block btn-lg py-2" onclick="goiLichHen();">Hẹn lịch</button>
+        <button type="button" class="btn btn-primary btn-block btn-lg py-2" id="btnGoilichHen" onclick="goiLichHen();">Hẹn lịch</button>
       </div>
     </form>
     <!-- Xác nhận cuộc hẹn sửa chữa -->
@@ -120,7 +120,7 @@
           <div class="modal-body" id="noidungKetqua">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng thông báo</button>
+            <button type="button" id="btnClose" class="btn btn-secondary" data-dismiss="modal">Đóng thông báo</button>
           </div>
         </div>
       </div>

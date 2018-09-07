@@ -21,7 +21,9 @@ function getGioHen(){
 }
 
 function checkingInput(inputID) {
-  if ($('#' + inputID).val().length == 0){
+  var value = $('#' + inputID).val();
+  //console.log(inputID);
+  if (value.length == 0){
     $('#error' + inputID).show();
     return false;
   } else {
@@ -42,8 +44,8 @@ function phoneChecking() {
 }
 
 function selectChecking(){
-  console.log($('#ngayHen').val());
-  console.log($('#gioHen').val());
+  //console.log($('#ngayHen').val());
+  //console.log($('#gioHen').val());
   if ($('#ngayHen').val() == null  || $('#gioHen').val() == null){
     $('#errorDateTime').show();
     return false;
@@ -85,22 +87,18 @@ function dangkyLichHen() {
     },
     beforeSend:function(xhr, settings){
       setToken(xhr, settings);
-      $('#btnDangnhap').html('Đang kiểm tra ...');
+      $('#btnGoilichHen').html('Đang gởi ...');
     },
     success : function(data){
       if (data['result']=='OK'){
         $('#noidungKetqua').html("Hẹn lịch sửa chữa thành công !!!");
-        $('#customerName').val('');
-        $('#phoneNumber').val('');
-        $('#ngayHen').val('');
-        $('#gioHen').val('');
-        $('#mechName').val('');
-        $('#symptomDescription').val('');
-        $('#partList').val('');
-        //window.location.assign('')
+        $('#btnClose').on('click', function(){
+          window.location.assign('');
+        });
       } else {
         $('#noidungKetqua').html("Hẹn lịch sửa chữa thất bại, vui lòng liên hệ cửa hàng để được trợ giúp !!!");
       }
+      $('#btnGoilichHen').html('Hẹn lịch');
       $('#errorHenLich').modal('show');
     },
     error: function(data){
