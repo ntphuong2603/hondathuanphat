@@ -10,11 +10,6 @@ from .pyFolder.navMenu import pageReturn
 
 @login_required(login_url='dangnhap')
 def xemlichhensuachua(request):
-    result = []
-    all_booking = RepairBooking.objects.all().filter(confirm=False)
-    for eachIterator in list(all_booking.values()):
-        result.append(eachIterator)
-    webParam[WEB_DATA] = result
     return pageReturn(request, DICH_VU)
 
 
@@ -27,10 +22,14 @@ def loaixe(request):
 def thaydoiTrangthaiBooking(request):
     if request.method == 'POST':
         data = {'update':'OK'}
-        booking_ID = int(request.POST.get('id'))
-        booking = RepairBooking.objects.get(id=booking_ID)
-        booking.confirm = request.POST.get('confirm')
-        booking.save()
+        #confirmList = request.POST.get('confirmList').split(',')
+        #print(confirmList)
+        #booking_ID = int(request.POST.get('id'))
+        for each in request.POST.get('confirmList').split(','):
+        #for each in confirmList:
+            booking = RepairBooking.objects.get(id=each)
+            booking.confirm = True
+            booking.save()
         return JsonResponse(data)
 
 def getBooking(confirmStatus=None):
@@ -40,10 +39,8 @@ def getBooking(confirmStatus=None):
         all_booking = RepairBooking.objects.all().filter(confirm=confirmStatus)
     result = {}
     for eachIterator in list(all_booking.values()):
-        #print(eachIterator)
         result[eachIterator['id']]=eachIterator
     return render_to_response('table_0.html', {'result': result})
-    #return JsonResponse()
 
 @login_required(login_url='dangnhap')
 def showBooking_all(request):

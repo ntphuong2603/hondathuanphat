@@ -1,46 +1,20 @@
   {% for key, value in result.items %}
   <tr id="{{key}}_all">
-    <th scope="row"><a href='#' id="{{key}}" onclick="showDetail(this.id);">{{each.id}}</a></th>
-    <td>{{value.name}}</td>
-    <td>{{value.phone}}</td>
-    <td>{{value.model}}</td>
-    <td>{{value.date}}</td>
-    <td>{{value.time}}</td>
+    <th scope="row"><a href='#' id="{{key}}" onclick="showDetail(this.id);">{{key}}</a></th>
+    <td id="{{key}}_name">{{value.name}}</td>
+    <td id={{key}}_phone>{{value.phone}}</td>
+    <td id={{key}}_model>{{value.model}}</td>
+    <td id={{key}}_date>{{value.date}}</td>
+    <td id={{key}}_time>{{value.time}}</td>
     <td>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="{{key}}_checkConfirm" value="{{value.confirm}}" onclick="changeInfo(this.id);">
-        <label class="form-check-label" id='{{key}}_changeInfo'>
-          {% if value.confirm %}Đã xác nhận{% else %}Chưa xác nhận{% endif %}
+        <input class="form-check-input" type="checkbox" id="{{key}}_checkConfirm" {% if value.confirm %} checked disabled {% endif %} onclick="changeStatus(this.id);">
+        <label class="form-check-label" id='{{key}}_status'>
+          {% if value.confirm %}Rồi{% else %}Chưa{% endif %}
         </label>
-        <button type="button" class="btn btn-primary" id="{{key}}_update" data-toggle="tooltip" data-placement="top" title="Cập nhật thay đổi" onclick="updateStatus(this.id);">
-          <i class="fas fa-save"></i>
-        </button>
       </div>
     </td>
   </tr>
-  <!-- Xem thông tin chi tiết về hiện tượng và danh sách phụ tùng -->
-  <div class="modal" tabindex="-1" role="dialog" id="{{key}}_detail">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Chi tiết</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <b>Hiện tượng</b>
-          <br/>
-          {{value.symptom}}
-          <br/>
-          <b>Danh sách phụ tùng</b>
-          <br/>
-          {{value.partList}}
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <input type="hidden" id="{{key}}_symptom" value="{{value.symptom}}">
+  <input type="hidden" id="{{key}}_partList" value="{{value.partList}}">
   {% endfor %}
