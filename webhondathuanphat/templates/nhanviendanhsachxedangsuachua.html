@@ -1,0 +1,73 @@
+{% extends "bieumau.html" %}
+{% block content %}
+{% load static %}
+<script src="{% static webParam.jsFile %}"></script>
+{% csrf_token %}
+<div class="row py-2" id="groupInput">
+  <div class="col-2">
+    <label>Lượng xe hiện tại
+      <span class="badge badge-pill badge-danger justify-content-between">10</span>
+    </label>
+  </div>
+  <div class="col-2">
+    <button type="button" class="btn btn-primary btn-block" id="btnThemXe" onclick="$('#formDangKy').modal('show');">Xe vào trạm</button>
+  </div>
+</div>
+<div class="row py-2" style="height: 400px">
+</div>
+<!-- Đăng ký xe vào trạm -->
+<div class="modal" tabindex="-1" role="dialog" id="formDangKy">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Nhập thông tin xe và khách hàng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">Khách hẹn trước</label>
+            </div>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="usr" placeholder="Nhập số điện thoại đã được hẹn">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <input type="text" class="form-control" id="usr" placeholder="Nhập tên khách hàng">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <input type="text" class="form-control" id="usr" placeholder="Nhập số điện thoại">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <input type="text" class="form-control" id="usr" placeholder="Số km trên đồng hồ">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <input type="text" class="form-control" id="usr" placeholder="Tên loại hình dịch vụ">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <input type="text" class="form-control" id="usr" placeholder="Tên thợ sẽ thực hiện">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="btnNhanXeVao" onclick="nhanXeVao();">Nhận xe</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Không nhận xe</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

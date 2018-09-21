@@ -17,4 +17,6 @@ urlpatterns = [
     url(r'^ajax/nhanvien/showBooking_notConfirm$', nhanvien.showBooking_notConfirm),
     url(r'^ajax/nhanvien/showBooking_all$', nhanvien.showBooking_all),
     url(r'^ajax/nhanvien/showBooking_confirmed$', nhanvien.showBooking_confirmed),
+    url(r'^ajax/nhanvien/getListThanhvien$', nhanvien.getListThanhvien),
+    url(r'^ajax/nhanvien/xemLichsuSudungDichvu$', nhanvien.xemLichsuSudungDichvu),
 ]

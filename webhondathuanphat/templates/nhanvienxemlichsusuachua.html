@@ -1,0 +1,33 @@
+{% extends "bieumau.html" %}
+{% block content %}
+{% load static %}
+<script src="{% static webParam.jsFile %}"></script>
+{% csrf_token %}
+<div class="row py-2" id="groupInput">
+  <div class="col-sm-2">
+    <input class="form-control" type="text" id="txtThanhvien" onkeyup="showSuggestThanhvien();" disabled>
+    <div class="dropdown-menu" id="thanhvienList">
+    </div>
+  </div>
+  <div class="col-sm-2">
+    <button type="button" class="btn btn-primary btn-block disabled" id="btnShowHistory" onclick="showHistory();">Tìm khách hàng</button>
+  </div>
+  <div class="col-sm-8">
+  </div>
+</div>
+<div class="row py-2" style="height: 400px">
+  <div class="col-sm-3" id="summaryData">
+    <h5>Thông tin tổng quát</h5>
+  </div>
+  <div class="col-sm-3">
+    <h5>Ngày làm dịch vụ</h5>
+    <div class="list-group scrollspy" id="historyDate">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <h5>Chi tiết của từng ngày</h5>
+    <div class="scrollspy" data-spy="scroll" data-target="#historyDate" id="historyDetail">
+    </div>
+  </div>
+</div>
+{% endblock %}

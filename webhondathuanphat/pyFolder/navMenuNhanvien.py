@@ -7,6 +7,8 @@ mainMenuList = [DICH_VU, NHAN_VIEN]
 subMenuList = { BAN_HANG[0] : { 'loaixe': 'Loại xe',
                               },
                 DICH_VU[0]  : { 'xemlichhensuachua' : 'Xem lịch hẹn sửa chữa',
+                                'xemlichsusuachua' : 'Xem lịch sử sửa chữa',
+                                'danhsachxedangsuachua': 'Danh sách xe đang sửa chữa',
                               },
                 NHAN_VIEN[0]: { 'thongtinnhanvien'    : 'Thông tin cá nhân',
                                 'dangxuat'          : 'Đăng xuất',

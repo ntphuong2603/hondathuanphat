@@ -1,0 +1,27 @@
+{% extends "bieumau.html" %}
+{% block content %}
+{% load static %}
+<script src="{% static webParam.jsFile %}"></script>
+{% csrf_token %}
+<div class="row py-1">
+  <div class="col-sm-3">
+    
+  </div>
+</div>
+<div class="row py-1">
+  <div class="col-sm-3">
+    <select class="form-control" id="modelName">
+      <option value="0">Tất cả các xe</option>
+      {% for eachModel in webParam.modelList %}
+        <option value="{{eachModel}}">{{eachModel}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-sm-3">
+    <button type="button" class="btn btn-primary" id="btnShowHistory" onclick="showHistory();">Xem lịch sử</button>
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>
+
+{% endblock %}

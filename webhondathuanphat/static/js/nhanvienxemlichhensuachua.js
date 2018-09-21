@@ -87,7 +87,6 @@ function submitStatus(){
             var position = checkboxList[i].id.indexOf('_', 0);
             confirmList.push(checkboxList[i].id.substr(0,position));
         }
-        //console.log(confirmList);
         checkboxListChecked = confirmList;
         return confirmList;
       },

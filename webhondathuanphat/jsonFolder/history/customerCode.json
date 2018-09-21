@@ -1,0 +1,44 @@
+{
+  "summary": {
+    "earning": 10000,
+    "spending": 50000,
+    "ranking": "Gold"
+  },
+  "earning": {
+    "1537259358" : {
+      "plateNumber": "56L-564.45",
+      "modelName": "Air Blade",
+      "mileage": 5000,
+      "amount": 10000,
+      "service": "thay nhot - thay nhot cau",
+      "mech": "Nguyen Van A",
+      "finish" : "finishingTime"
+    },
+    "1537259370" : {
+      "plateNumber": "56L-564.45",
+      "modelName": "Air Blade",
+      "mileage": 5000,
+      "amount": 10000,
+      "service": "thay nhot - thay nhot cau",
+      "mech": "Nguyen Van A",
+      "finish" : "finishingTime"
+    },
+    "1537259553" : {
+      "plateNumber": "56L-564.45",
+      "modelName": "Air Blade",
+      "mileage": 5000,
+      "amount": 10000,
+      "service": "thay nhot - thay nhot cau",
+      "mech": "Nguyen Van A",
+      "finish" : "finishingTime"
+    }
+  },
+  "spending": {
+    "timestamp" : {
+      "mileage": 5000,
+      "amount": 10000,
+      "service": "thay nhot - thay nhot cau",
+      "mech": "Nguyen Van A"
+    }
+  }
+}

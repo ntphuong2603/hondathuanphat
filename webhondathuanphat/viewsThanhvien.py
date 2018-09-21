@@ -20,7 +20,7 @@ def dangky(request):
     if request.method == 'POST':
         data = {'user' : 'NG'}
         usr = request.POST.get('usr')
-        if not User.objects.filter(username=usr).exists():            
+        if not User.objects.filter(username=usr).exists():
             user = User(username=usr, email='')
             user.set_password(request.POST.get('pwd'))
             user.save()
@@ -37,3 +37,11 @@ def thongtinxe(request):
 @login_required(login_url='dangnhap')
 def capnhatmatkhau(request):
     return capnhatthongtin(request=request, isPass=True)
+
+@login_required(login_url='dangnhap')
+def getModelList(request):
+    return None
+
+@login_required(login_url='dangnhap')
+def getModelHistory(request):
+    return None

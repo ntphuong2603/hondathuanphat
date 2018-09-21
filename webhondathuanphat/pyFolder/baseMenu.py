@@ -1,4 +1,4 @@
-import json
+from . import jsonFile
 #Constant menu variables
 TRANG_CHU       = ('trangchu',      'Trang chủ')
 BAN_HANG        = ('banhang',       'Bán hàng')
@@ -24,8 +24,8 @@ SUB_MENU = 'subMenu'
 ERROR_HTML_FILE = 'error.html'
 
 JSON_FOLDER = 'webhondathuanphat\\jsonFolder\\'
-FILE_CATEROGY = JSON_FOLDER + 'dict_cat.json'
-FILE_MODEL = JSON_FOLDER + 'dict_Model.json'
+FILE_CATEROGY = 'dict_cat'
+FILE_MODEL = 'dict_Model'
 
 webParam = {SELECTED_MENU: None, JS_FILE: None, WEB_DATA: None, LOAI_XE: None, MOBILE: None}
 
@@ -53,12 +53,19 @@ def getSubMenuList(menuList, subMenuList):
                 menuList[eachSide][eachMenu][SUB_MENU] = subMenuList[eachMenu]
     return menuList
 
+def loadFile(fileName):
+    try:
+        f = open(fileName, 'r', encoding = 'utf-8')
+        dict_data = json.loads(f.read())
+        f.close()
+        return dict_data
+    except Exception as e:
+        print(e)
+        return None
 
 def loadData(is_Model=False):
     fileName = FILE_CATEROGY
     if is_Model:
         fileName = FILE_MODEL
-    f = open(fileName, 'r', encoding = 'utf-8')
-    dict_data = json.loads(f.read())
-    f.close()
-    return dict_data
+    #return loadFile(fileName)
+    return jsonFile.readFile(pathFile=JSON_FOLDER, fileName=fileName)

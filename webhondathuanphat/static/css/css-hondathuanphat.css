@@ -22,7 +22,7 @@
   color: #ff3547!important;
 }
 
-.navbar .nav-item a:hover, .navbar .nav-item .active, .dropdown-menu .nav-link{
+.navbar .nav-item a:hover, .navbar .nav-item .active, .dropdown-menu .nav-link {
   color: #ff3547!important;
   background-color: white;
   font-weight: bold;
@@ -50,8 +50,14 @@ li.dropdown:hover > .dropdown-menu {
 }
 
 .myPosition {
-  float: right;  
+  float: right;
   z-index: 1;
   top: 50%;
   right: 0;
+}
+
+.scrollspy {
+  position: relative;
+  height: 330px;
+  overflow-y: scroll;
 }

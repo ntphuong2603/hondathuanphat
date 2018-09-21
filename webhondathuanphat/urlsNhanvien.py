@@ -7,4 +7,6 @@ urlpatterns = [
     path('xemlichhensuachua', nhanvien.xemlichhensuachua, name='xemlichhensuachua'),
     path('loaixe', nhanvien.loaixe, name='loaixe'),
     path('thongtincanhan', thongtincanhan, name='thongtinnhanvien'),
+    path('xemlichsusuachua', nhanvien.xemlichsusuachua, name='xemlichsusuachua'),
+    path('danhsachxedangsuachua', nhanvien.danhsachxedangsuachua, name='danhsachxedangsuachua'),
 ]
