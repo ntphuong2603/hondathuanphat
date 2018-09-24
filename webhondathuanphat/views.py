@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .models import Member
-from .pyFolder.baseMenu import TRANG_CHU, BAN_HANG, DICH_VU, PHU_TUNG, LAI_XE_AN_TOAN, THANH_VIEN, TIN_TUC, TUYEN_DUNG, NHAN_VIEN
-from .pyFolder.navMenu import pageReturn, webParam
+from .Folder_pyFile.baseMenu import TRANG_CHU, BAN_HANG, DICH_VU, PHU_TUNG, LAI_XE_AN_TOAN, THANH_VIEN, TIN_TUC, TUYEN_DUNG, NHAN_VIEN
+from .Folder_pyFile.navMenu import pageReturn, webParam
 
 
 # Create your views here.

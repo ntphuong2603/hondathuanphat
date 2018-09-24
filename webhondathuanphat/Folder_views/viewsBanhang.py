@@ -1,6 +1,6 @@
-from .pyFolder.baseMenu import BAN_HANG, webParam, WEB_DATA
-from .pyFolder.baseMenu import loadData
-from .pyFolder.navMenu import pageReturn
+from ..Folder_pyFile.baseMenu import BAN_HANG, webParam, WEB_DATA
+from ..Folder_pyFile.baseMenu import loadData
+from ..Folder_pyFile.navMenu import pageReturn
 import json
 
 

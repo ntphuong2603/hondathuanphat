@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from . import views
-from . import viewsBanhang as banhang, viewsDichvu as dichvu, viewsThanhvien as thanhvien, viewsNhanvien as nhanvien
+from .. import views
+from ..Folder_views import viewsBanhang as banhang, viewsDichvu as dichvu, viewsThanhvien as thanhvien, viewsNhanvien as nhanvien
 
 
 urlpatterns = [
@@ -19,4 +19,7 @@ urlpatterns = [
     url(r'^ajax/nhanvien/showBooking_confirmed$', nhanvien.showBooking_confirmed),
     url(r'^ajax/nhanvien/getListThanhvien$', nhanvien.getListThanhvien),
     url(r'^ajax/nhanvien/xemLichsuSudungDichvu$', nhanvien.xemLichsuSudungDichvu),
+    url(r'^ajax/nhanvien/themxevaotram$', nhanvien.themxevaotram),
+    url(r'^ajax/nhanvien/thanhtoantienDichvu$', nhanvien.thanhtoantienDichvu),
+    url(r'^ajax/nhanvien/getPhoneBookingList$', nhanvien.getPhoneBookingList),
 ]

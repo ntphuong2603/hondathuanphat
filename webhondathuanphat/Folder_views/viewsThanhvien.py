@@ -2,10 +2,10 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from .models import Member
+from ..models import Member
 from datetime import date
-from .pyFolder.baseMenu import THANH_VIEN, webParam, WEB_DATA
-from .pyFolder.navMenu import pageReturn
+from ..Folder_pyFile.baseMenu import THANH_VIEN, webParam, WEB_DATA
+from ..Folder_pyFile.navMenu import pageReturn
 
 
 def dangnhap(request):

@@ -23,7 +23,7 @@ MENU_NAME = 'menuName'
 SUB_MENU = 'subMenu'
 ERROR_HTML_FILE = 'error.html'
 
-JSON_FOLDER = 'webhondathuanphat\\jsonFolder\\'
+JSON_FOLDER = 'webhondathuanphat\\Folder_json\\'
 FILE_CATEROGY = 'dict_cat'
 FILE_MODEL = 'dict_Model'
 
@@ -68,4 +68,5 @@ def loadData(is_Model=False):
     if is_Model:
         fileName = FILE_MODEL
     #return loadFile(fileName)
-    return jsonFile.readFile(pathFile=JSON_FOLDER, fileName=fileName)
+    #return jsonFile.readFile(pathFile=JSON_FOLDER, fileName=fileName)
+    return jsonFile.getData(pathFile=JSON_FOLDER, fileName=fileName)

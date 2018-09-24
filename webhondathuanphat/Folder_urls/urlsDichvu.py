@@ -1,5 +1,5 @@
 from django.urls import path
-from . import viewsDichvu as dichvu
+from ..Folder_views import viewsDichvu as dichvu
 
 
 urlpatterns = [

@@ -1,5 +1,5 @@
 from django.urls import path
-from . import viewsBanhang as banhang
+from ..Folder_views import viewsBanhang as banhang
 
 
 urlpatterns = [

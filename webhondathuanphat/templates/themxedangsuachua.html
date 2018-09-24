@@ -1,0 +1,18 @@
+{% for key, value in danhsachXe.items %}
+<div class="col-sm-3 py-3">
+  <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{key}}</h5>
+        <p class="card-text">
+          {% for eachK, eachV in value.items %}
+          <div class="form-group row py-0">
+            <label class="col-form-label col-form-label-sm col-5">{{eachV.str}}</label>
+            <input type="text" class="form-control form-control-sm col-7" id='{{key}}-{{eachK}}' value='{{eachV.val}}'>
+          </div>
+          {% endfor %}
+          <button type="button" class="btn btn-primary btn-block" id="btnThanhtoan" onclick="thanhtoan();">Thanh toán</button>
+        </p>
+      </div>
+  </div>
+</div>
+{% endfor %}

@@ -1,6 +1,6 @@
 from django.urls import path
-from . import viewsThanhvien as thanhvien
-from .views import thongtincanhan
+from ..Folder_views import viewsThanhvien as thanhvien
+from ..views import thongtincanhan
 
 
 urlpatterns = [

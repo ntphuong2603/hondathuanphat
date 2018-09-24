@@ -4,16 +4,34 @@
 <script src="{% static webParam.jsFile %}"></script>
 {% csrf_token %}
 <div class="row py-2" id="groupInput">
-  <div class="col-2">
+  <div class="col-sm-2">
     <label>Lượng xe hiện tại
-      <span class="badge badge-pill badge-danger justify-content-between">10</span>
+      <span class="badge badge-pill badge-danger justify-content-between" id="numberXeDangSuaChua">{{webParam.webData.number}}</span>
     </label>
   </div>
-  <div class="col-2">
-    <button type="button" class="btn btn-primary btn-block" id="btnThemXe" onclick="$('#formDangKy').modal('show');">Xe vào trạm</button>
+  <div class="col-sm-2">
+    <button type="button" class="btn btn-primary btn-block" id="btnThemXe" onclick="$('#formDangKy').modal('show');">Thêm xe vào trạm</button>
   </div>
 </div>
-<div class="row py-2" style="height: 400px">
+<div class="row py-2" id="danhsachxedangsuachua">
+  {% for key, value in webParam.webData.danhsachXe.items %}
+  <div class="col-sm-3 py-3">
+    <div class="card" id="{{key}}">
+        <div class="card-body">
+          <h5 class="card-title">{{key}}</h5>
+          <p class="card-text">
+            {% for eachK, eachV in value.items %}
+            <div class="form-group row py-0">
+              <label class="col-form-label col-form-label-sm col-5">{{eachV.str}}</label>
+              <input type="{% if eachK == 'pho' or eachK == 'amt' or eachK == 'mil' %}number{% else %}text{% endif %}" class="form-control form-control-sm col-7" id='{{key}}-{{eachK}}' value='{{eachV.val}}'>
+            </div>
+            {% endfor %}
+          </p>
+          <button type="button" class="btn btn-primary btn-block" onclick="thanhtoan({{key}});">Thanh toán</button>
+        </div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
 <!-- Đăng ký xe vào trạm -->
 <div class="modal" tabindex="-1" role="dialog" id="formDangKy">
@@ -27,45 +45,71 @@
       </div>
       <div class="modal-body">
         <div class="form-group row">
-          <div class="col-sm-4">
+          <div class="col-sm-5">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Khách hẹn trước</label>
+              <input class="form-check-input" type="checkbox" id="bookedCustomer" onchange="showCustomer();">
+              <label class="form-check-label" for="defaultCheck1">Đã hẹn trước</label>
             </div>
           </div>
-          <div class="col">
-            <input type="text" class="form-control" id="usr" placeholder="Nhập số điện thoại đã được hẹn">
+          <div class="col-sm-7">
+            <input type="text" disabled class="form-control" id="phone" placeholder="Số điện thoại được hẹn" onkeyup="showSuggestPhoneThanhvien();">
+            <div class="dropdown-menu" id="phoneBookinglist">
+            </div>
           </div>
         </div>
         <div class="form-group row">
           <div class="col">
-            <input type="text" class="form-control" id="usr" placeholder="Nhập tên khách hàng">
+            <input type="text" class="form-control" id="txtCustomerName" placeholder="Nhập tên khách hàng" value='Phuong'>
           </div>
         </div>
         <div class="form-group row">
           <div class="col">
-            <input type="text" class="form-control" id="usr" placeholder="Nhập số điện thoại">
+            <input type="text" class="form-control" id="txtPhone" placeholder="Nhập số điện thoại" value='1234567890'>
           </div>
         </div>
         <div class="form-group row">
           <div class="col">
-            <input type="text" class="form-control" id="usr" placeholder="Số km trên đồng hồ">
+            <input type="text" class="form-control" id="txtMileage" placeholder="Số km trên đồng hồ" value='967'>
           </div>
         </div>
         <div class="form-group row">
           <div class="col">
-            <input type="text" class="form-control" id="usr" placeholder="Tên loại hình dịch vụ">
+            <input type="text" class="form-control" id="txtModel" placeholder="Loại xe đang sử dụng" value='AB'>
           </div>
         </div>
         <div class="form-group row">
           <div class="col">
-            <input type="text" class="form-control" id="usr" placeholder="Tên thợ sẽ thực hiện">
+            <input type="text" class="form-control" id="txtService" placeholder="Tên loại hình dịch vụ" value='Thay nhot'>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <input type="text" class="form-control" id="txtMech" placeholder="Tên thợ sẽ thực hiện" value='Phu'>
           </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" id="btnNhanXeVao" onclick="nhanXeVao();">Nhận xe</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Không nhận xe</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Thanh toán xe đã sửa chữa xong -->
+<div class="modal" tabindex="-1" role="dialog" id="formThanhtoan">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Thông tin thanh toán</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="noidungThanhtoan">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="btnHoantatThanhtoan" onclick="hoantatThanhtoan();">Hoàn tất thanh toán</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Chưa thanh toán</button>
       </div>
     </div>
   </div>
