@@ -75,9 +75,7 @@ function nhanXeVao(){
       'mod' : $('#txtModel').val(),
       'mil' : $('#txtMileage').val(),
       'ser' : $('#txtService').val(),
-      'mec' : $('#txtMech').val(),
-      'amt' : '0',
-      'din' : ' '
+      'mec' : $('#txtMech').val()
     },
     beforeSend:function(xhr, settings){
       xhr.setRequestHeader('X-CSRFToken',

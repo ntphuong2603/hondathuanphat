@@ -1,3 +1,5 @@
+//imgList = []
+var fd;
 function setToken(xhr, settings){
   xhr.setRequestHeader('X-CSRFToken', $('input[name=csrfmiddlewaretoken]').val());
 }
@@ -72,20 +74,64 @@ function goiLichHen() {
     }
 }
 
+function getImgList(){
+  var list = [];
+  if ($('#addPictures').prop('checked')==true){
+    $.each($("img[id*='_img']"), function(img){
+      console.log(img);
+      list.append(img.prop('src'))
+    });
+    console.log(list);
+  }
+  return list;
+}
+
+function getFormData(){
+  var form_data = new FormData();
+  form_data.append('cname', $('#customerName').prop("value"));
+  form_data.append('phone', $('#phoneNumber').val());
+  form_data.append('model', $('#modelName').val());
+  form_data.append('datep', $('#ngayHen').val());
+  form_data.append('timep', $('#gioHen').val());
+  form_data.append('sympt', $('#symptomDescription').val());
+  form_data.append('partl', $('#partList').val());
+  if ($('#addPictures').prop('checked')==true){
+    var file_data = [];
+    file_data.push($("#11_file").prop("files")[0]);
+    file_data.push($("#12_file").prop("files")[0]);
+    file_data.push($("#21_file").prop("files")[0]);
+    file_data.push($("#22_file").prop("files")[0]);
+    form_data.append('files', file_data);
+    form_data.append('file1', $("#11_file").prop("files")[0]);
+    form_data.append('file2', $("#12_file").prop("files")[0]);
+  }
+  //console.log(form_data);
+  fd = form_data;
+  return form_data;
+}
+
 function dangkyLichHen() {
+  var form_data = new FormData();
+  form_data.append('cname', $('#customerName').val());
+  form_data.append('phone', $('#phoneNumber').val());
+  form_data.append('model', $('#modelName').val());
+  form_data.append('datep', $('#ngayHen').val());
+  form_data.append('timep', $('#gioHen').val());
+  form_data.append('sympt', $('#symptomDescription').val());
+  form_data.append('partl', $('#partList').val());
+  if ($('#addPictures').prop('checked')==true){
+    form_data.append('file1', $("#11_file").prop("files")[0]);
+    form_data.append('file2', $("#12_file").prop("files")[0]);
+  }
+  console.log(form_data);
   $.ajax({
     url : '/ajax/dichvu/dangkyLichhen',
     type : 'POST',
-    data : {
-        'name': $('#customerName').val(),
-        'phone': $('#phoneNumber').val(),
-        'model': $('#modelName').val(),
-        'date' : $('#ngayHen').val(),
-        'time' : $('#gioHen').val(),
-        'symptom' : $('#symptomDescription').val(),
-        'partList': $('#partList').val()
-    },
-    beforeSend:function(xhr, settings){
+    dataType: 'json',
+    processData: false,
+    contentType: false,
+    data : form_data,
+    beforeSend: function(xhr, settings){
       setToken(xhr, settings);
       $('#btnGoilichHen').html('Đang gởi ...');
     },
@@ -105,4 +151,23 @@ function dangkyLichHen() {
       alert('Something wrong, please contact webadmin!')
     }
   });
+}
+
+function showImage(inputFile){
+  var reader = new FileReader();
+  reader.onload = function (e){
+    $('#'+inputFile.id.substr(0,2)+'_img').attr('src', e.target.result);
+  }
+  reader.readAsDataURL(inputFile.files[0]);
+}
+
+function showPictures() {
+  //console.log($('#addPictures').prop('checked'));
+  if ($('#addPictures').prop('checked')==true){
+    $('#1').show();
+    $('#2').show();
+  } else {
+    $('#1').hide();
+    $('#2').hide();
+  }
 }

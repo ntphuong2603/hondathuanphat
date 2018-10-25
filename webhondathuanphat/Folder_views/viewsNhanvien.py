@@ -3,11 +3,12 @@ from django.shortcuts import render_to_response
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from ..models import Member
-from ..models import RepairBooking
+from ..models import dbFunctions as functions
+from ..models.Member import Member
+from ..models.RepairBooking import RepairBooking, CONST as CONST_Rep
+from ..models.History import History, CONST as CONST_His
 from ..Folder_pyFile.baseMenu import DICH_VU, NHAN_VIEN, webParam, WEB_DATA
 from ..Folder_pyFile.navMenu import pageReturn
-from ..Folder_pyFile import jsonFile
 
 
 @login_required(login_url='dangnhap')
@@ -89,101 +90,70 @@ def getHistory(data):
 def xemLichsuSudungDichvu(request):
     if request.method == 'POST':
         data = {'summary': {}, 'history': {}, 'using': {}}
-        dataHistory = jsonFile.readFile(pathFile = HISTORY_FOLDER, fileName = request.POST.get('usr'))
+        dataHistory = functions.getAll(History, CONST_His, {'usr_id': functions.getUser(request.POST.get('usr')).id})
+        print(dataHistory)
         if dataHistory is not None:
             data = {'summary': dataHistory['summary'],
                     'history': getHistory(dataHistory['earning']),
                     'using': getHistory(dataHistory['spending'])}
         return JsonResponse(data)
 
-def getDict(data=None, isKeys=True):
-    items = {'cus':'Tên khách',
-             'pho':'Điện thoại',
-             'mod':'Loại xe',
-             'mil':'Số km',
-             'ser':'Dịch vụ',
-             'mec':'Tên thợ',
-             'amt':'Thành tiền',
-             'din' :'Ngày giờ'
-            }
-    if isKeys and data is None:
-        return list(items.keys())
-    else:
-        result = {}
-        for each in data:
-            result[each] = {}
-            for key in data[each]:
-                result[each][key] = {'val':data[each][key], 'str':items[key]}
-        return result, len(result)
-
 
 @login_required(login_url='dangnhap')
 def danhsachxedangsuachua(request):
-    data, size = getDict(data=jsonFile.danhsachxedangsuachua(),isKeys=False)
-    webParam[WEB_DATA] = {'danhsachXe': data, 'number': size}
+    history = functions.getAll(History, CONST_His, {'isF':False})
+    print(history)
+    webParam[WEB_DATA] = {'danhsachXe': history, 'number': len(history)}
     return pageReturn(request, DICH_VU)
 
 
 @login_required(login_url='dangnhap')
 def themxevaotram(request):
     if request.method == 'POST':
-        id = str(int(time.time()))
-        data = {id: {}}
-        for each in getDict():
-            data[id][each] = request.POST.get(each)
-        data[id]['din'] = datetime.datetime.utcfromtimestamp(int(id)).strftime("%d-%m-%y lúc %H:%M")
-        jsonFile.themxevaotram(data = data)
-        result, size = getDict(data=data,isKeys=False)
-        return render_to_response('themxedangsuachua.html', {'danhsachXe': result})
+        dataDict = {}
+        for each in CONST_His.keys():
+            value = request.POST.get(each)
+            if not value is None:
+                dataDict[each] = value
+        print(dataDict)
+        #dataDict['din'] = int(time.time())
+        dataDict['din'] = datetime.datetime.fromtimestamp(int(time.time())).strftime("%d-%m-%Y - %H:%M")
+        history = functions.createObject(History, dataDict, request.POST.get('pho'))
+        data = functions.queryTOdict(functions.getObject(History, history.id).values(), CONST_His)
+        #print(data)
+        return render_to_response('themxedangsuachua.html', {'danhsachXe': data})
 
-def cusData(data):
-    result = {}
-    for each in data.keys():
-        if each != 'timestamp' and each != 'pho':
-            result[each] = data[each]
-    return {data['timestamp']: result}
-
-def getDataFrRequest(request):
-    #timestamp = request.POST.get('timestamp')
-    temp = {"timestamp": request.POST.get('timestamp')}
-    for each in getDict():
-        key = 'serviceData[' + each + ']'
-        temp[each] = request.POST.get(key)
-    return temp['pho'], cusData(temp), request.POST.get('timestamp')
 
 @login_required(login_url='dangnhap')
 def thanhtoantienDichvu(request):
     if request.method == 'POST':
         result = {'result': 'OK'}
-        #postData = getDataFrRequest(request)
-        fileName, dictData, timestamp_id= getDataFrRequest(request)
-        jsonFile.themDichvu(fileName=fileName, data=dictData, timestamp_id=timestamp_id)
         return JsonResponse(result)
 
 
 @login_required(login_url='dangnhap')
 def getPhoneBookingList(request):
     if request.method == 'POST':
-        listPhoneBooking = []
         today = datetime.datetime.utcfromtimestamp(time.time()).strftime("%d-%m-%Y")
-        bookings = RepairBooking.objects.all().filter(confirm=True, date=today)
-        #bookings = RepairBooking.objects.all().filter(date=today)
+        bookingDict = functions.getAll(RepairBooking, CONST_Rep, {"confm": True, "datep": today})
+        #print("No: ", len(bookingDict), "Bookings: ", bookingDict.keys())
+        listPhoneBooking = []
         data = {}
-        id = str(int(time.time()))
-        for eachIterator in list(bookings.values()):
-            #print(eachIterator)
-            listPhoneBooking.append(eachIterator['phone'])
-            #print(eachIterator.keys())
-            data[id] = {}
-            for each in eachIterator.keys():
-                #print(each[:3])
-                if each[:3] in getDict():
-                    data[id][each[:3]] = eachIterator[each]
-            data[id]['cus'] = eachIterator['name']
-            data[id]['din'] = datetime.datetime.utcfromtimestamp(int(id)).strftime("%d-%m-%y lúc %H:%M")
-            data[id]['amt'] = "0"
-            data[id]['mec'] = ""
-            id = str(int(id) + 1)
+        for eachBookingID in bookingDict.keys():
+            oneBooking = bookingDict[eachBookingID]
+            #print("One-Booking: ", oneBooking)
+            listPhoneBooking.append(oneBooking['phone'][1])
+            subData = {}
+            for each in CONST_His.keys():
+                if each in oneBooking.keys():
+                    subData[each] = oneBooking[each][1]
+                else:
+                    subData[each] = ""
+            subData['cus'] = oneBooking['cname'][1]
+            subData['din'] = datetime.datetime.utcfromtimestamp(int(time.time())).strftime("%d-%m-%y lúc %H:%M")
+            subData['amt'] = "0"
+            subData['mec'] = ""
+            data[eachBookingID] = subData
         #print(listPhoneBooking)
         #print(data)
         return JsonResponse({'listPhoneBooking':listPhoneBooking, 'bookingDetail': data})

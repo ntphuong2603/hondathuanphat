@@ -12,6 +12,18 @@
   color: #ff3547!important;
 }
 
+.revMyHeader {
+  background-color: #ff3547!important;
+  border-color: #ff3547!important;
+  color: white;
+}
+
+.optMyHeader {
+  background-color: white!important;
+  border-color: #ff3547!important;
+  color: #ff3547!important;
+}
+
 .footer-copyright, .navbar , .navbar .nav-item .dropdown-menu{
   background-color: #ff3547!important;
   color: white;

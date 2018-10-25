@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from .models import Member
+from .models.Member import Member
 from .Folder_pyFile.baseMenu import TRANG_CHU, BAN_HANG, DICH_VU, PHU_TUNG, LAI_XE_AN_TOAN, THANH_VIEN, TIN_TUC, TUYEN_DUNG, NHAN_VIEN
 from .Folder_pyFile.navMenu import pageReturn, webParam
 
@@ -83,6 +83,7 @@ def thongtincanhan(request):
     if request.method == 'POST'  :
         return capnhatthongtin(request, isPass = False)
     else:
+        print("ID: ", request.user.id)
         webParam['webData'] = Member().getMember(request.user.id)
         if request.user.is_staff:
             return pageReturn(request, NHAN_VIEN)
@@ -103,7 +104,7 @@ def capnhatthongtin(request, isPass = False):
         usr.last_name = request.POST.get('last_name')
         usr.email = request.POST.get('email')
         usr.save()
-        mem = Member.objects.get(user_id=usr.id)
+        mem = Member.objects.get(usr_id=usr.id)
         mem.phone = request.POST.get('phone')
         mem.address = request.POST.get('address')
         mem.commentName = request.POST.get('commentName')
