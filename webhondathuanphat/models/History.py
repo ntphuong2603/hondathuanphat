@@ -1,10 +1,8 @@
 import time
 from django.db import models
 from django.contrib.auth.models import User
-from . import dbFunctions as functions
 
 CONST = {
-    "usr": "Khách hàng",
     "mod": "Loại xe",
     "mil": "Số km",
     "ser": "Công việc",

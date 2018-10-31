@@ -1,8 +1,9 @@
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
-from .models.Member import Member
+#from django.contrib.auth.models import User
+#from .models.Member import Member
+from .models import dbFunctions as functions
 from .Folder_pyFile.baseMenu import TRANG_CHU, BAN_HANG, DICH_VU, PHU_TUNG, LAI_XE_AN_TOAN, THANH_VIEN, TIN_TUC, TUYEN_DUNG, NHAN_VIEN
 from .Folder_pyFile.navMenu import pageReturn, webParam
 
@@ -83,8 +84,13 @@ def thongtincanhan(request):
     if request.method == 'POST'  :
         return capnhatthongtin(request, isPass = False)
     else:
-        print("ID: ", request.user.id)
-        webParam['webData'] = Member().getMember(request.user.id)
+        print("ID: ", request.user.id, "Username: ", request.user.username)
+        #webParam['webData'] = Member().getMember(request.user.id)
+        mem = functions.getObject("Mem", {"usr_id": request.user.id})
+        usr = functions.getUser(request.user.username)
+        #print("Mem: ", mem)
+        #print("Usr: ", usr)
+        webParam['webData'] = {'mem':mem, 'usr':usr}
         if request.user.is_staff:
             return pageReturn(request, NHAN_VIEN)
         else:
@@ -99,6 +105,7 @@ def capnhatmatkhau(request):
 
 def capnhatthongtin(request, isPass = False):
     try:
+        #usr = functions.getUser(username=request.user.username, isCreate=False)
         usr = User.objects.get(username=request.user)
         usr.first_name = request.POST.get('first_name')
         usr.last_name = request.POST.get('last_name')

@@ -1,8 +1,9 @@
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
-from ..models import Member
+#from django.contrib.auth.models import User
+#from ..models import Member
+from ..models import dbFunctions as functions
 from datetime import date
 from ..Folder_pyFile.baseMenu import THANH_VIEN, webParam, WEB_DATA
 from ..Folder_pyFile.navMenu import pageReturn
@@ -18,14 +19,9 @@ def dangxuat(request):
 
 def dangky(request):
     if request.method == 'POST':
-        data = {'user' : 'NG'}
         usr = request.POST.get('usr')
-        if not User.objects.filter(username=usr).exists():
-            user = User(username=usr, email='')
-            user.set_password(request.POST.get('pwd'))
-            user.save()
-            data = {'user':'OK'}
-        return JsonResponse(data)
+        pwd = request.POST.get('pwd')
+        return JsonResponse({"result" : functions.getUser(usr, pwd)})
     return pageReturn(request, THANH_VIEN)
 
 
@@ -36,11 +32,13 @@ def thongtinxe(request):
 
 @login_required(login_url='dangnhap')
 def capnhatmatkhau(request):
-    return capnhatthongtin(request=request, isPass=True)
+    return None
+
 
 @login_required(login_url='dangnhap')
 def getModelList(request):
     return None
+
 
 @login_required(login_url='dangnhap')
 def getModelHistory(request):

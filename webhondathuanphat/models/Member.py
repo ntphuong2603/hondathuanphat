@@ -1,16 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
-from . import dbFunctions as functions
 
 CONST = {
     'phn': 'Số điện thoại',
     'add': 'Địa chỉ',
     'nme': 'Tên thường gọi',
-    'ava': 'Ảnh đại diện',
-    'fnm': 'Tên',
-    'lnm': 'Họ',
-    'ema': 'Địa chỉ email',
-    'dte': 'Ngày gia nhập',
+    #'ava': 'Ảnh đại diện',
+    #'isD': 'Đã xóa'
 }
 
 class Member(models.Model):
@@ -20,13 +16,6 @@ class Member(models.Model):
     nme = models.CharField(blank=True, max_length=100)
     ava = models.CharField(blank=True, max_length=100)
     isD = models.BooleanField(default=False)
-
-    def getMember(self, user_id):
-        mbr = Member.objects.filter(usr_id=user_id).values()
-        usr = User.objects.filter(id=user_id).values()
-        rlt = functions.makeDict(mbr, {}, CONST)
-        rlt = functions.makeDict(usr, rlt, CONST)
-        return rlt
 
     class Meta:
         db_table = "Member"

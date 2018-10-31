@@ -10,8 +10,9 @@ CONST = {
     'timep': 'Giờ hẹn',
     'sympt': 'Hiện tượng',
     'partl': 'Phụ tùng',
-    'confm': 'Xác nhận',
+    #'confm': 'Xác nhận',
     'notep': 'Ghi chú',
+    #{}"isD": "Đã xóa"
 }
 
 class RepairBooking(models.Model):

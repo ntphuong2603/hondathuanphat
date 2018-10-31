@@ -1,20 +1,19 @@
-  {% for key, value in result.items %}
-  <tr id="{{key}}_all">
-    <th scope="row"><a href='#' id="{{key}}" onclick="showDetail(this.id);">{{key}}</a></th>
-    <td id="{{key}}_name">{{value.name}}</td>
-    <td id={{key}}_phone>{{value.phone}}</td>
-    <td id={{key}}_model>{{value.model}}</td>
-    <td id={{key}}_date>{{value.date}}</td>
-    <td id={{key}}_time>{{value.time}}</td>
-    <td>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="{{key}}_checkConfirm" {% if value.confirm %} checked disabled {% endif %} onclick="changeStatus(this.id);">
-        <label class="form-check-label" id='{{key}}_status'>
-          {% if value.confirm %}Rồi{% else %}Chưa{% endif %}
-        </label>
-      </div>
-    </td>
+  {% for id, dict in result.items %}
+  <tr id="{{id}}_all">
+    <th scope="row"><a href='#' id="{{id}}" onclick="showDetail(this.id);">{{id}}</a></th>
+    {% for key, val in dict.items %}
+      {% if not "confm" in key %}
+        <td id="{{id}}_{{key}}">{{val.1}}</td>
+      {% else %}
+        <td>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="{{id}}_{{key}}" {% if val.1 %} checked disabled {% endif %} onclick="changeStatus(this.id);">
+            <label class="form-check-label" id='{{id}}_{{key}}'>
+              {% if val.1 %}Rồi{% else %}Chưa{% endif %}
+            </label>
+          </div>
+        </td>
+      {% endif %}
+    {% endfor %}
   </tr>
-  <input type="hidden" id="{{key}}_symptom" value="{{value.symptom}}">
-  <input type="hidden" id="{{key}}_partList" value="{{value.partList}}">
   {% endfor %}
